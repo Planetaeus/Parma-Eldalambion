@@ -1,0 +1,4 @@
+Nouns: 32
+Verbs: 28
+Adjectives: 11
+Prepositions: 5

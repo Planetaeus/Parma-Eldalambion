@@ -1,0 +1,28 @@
+0. mapa, A-Stem
+1. tir, Primary
+2. lala, A-stem
+3. caita, Dipthong A-Stem
+4. tulta, Complex A-stem
+5. linda, Complex A-stem
+6. mat, Primary
+7. cenda, Complex A-stem
+8. sil, Primary
+9. hir, Primary
+10. cap, Primary
+11. tec, Primary
+12. quet, Primary
+13. mel, Primary
+14. cen, Primary
+15. orta, Complex A-stem
+16. harya, Ya-Stem
+17. fir, Primary
+18. tur, Primary
+19. tul, Primary
+20. lanta, Complex A-stem
+21. nurta, Complex A-stem
+22. lerya, Ya-Stem
+23. metya, Ya-Stem
+24. roita, Dipthong A-Stem
+25. laita, Dipthong A-Stem
+26. hlar, Primary
+27. ruhta, Complex A-stem

@@ -1,0 +1,112 @@
+15.05.17 22:22
+-To increase organization packages were
+	created:
+
+	'basics':   Contains Word, Noun, Verb, and
+	    Adjective classes
+	'vocab':    Contains WordList, Vocab, VocabNoun,
+	    VocabVerb, and VocabAdjective classes
+	'practice': Contains Practice, Translation,
+	    VerbPractice, and AdjectivePractice
+	    classes.
+	'gui':	    Created to contain all classes and 	    files that will contribute to an established
+	    GUI for the entire project.
+	All necessary package and import statements were
+	    added, as were any method calls that had to
+	    be slightly modified to account for new packaging.
+
+-Changes in 'basics':
+	-Verb:
+		Added constant NUM_TENSES for use in
+	    randomized verb practice.
+
+-Changes in 'practice':
+	-Practice:
+		Many methods were relocated for the sake
+	    of compartmentalization.
+		Methods randomBoolean, getLang, response,
+	    quit, and yes made public for other classes
+	    in package practice.
+	-Translation:
+		Created.
+		Received translatingWords method (renamed to translate).
+		Received translate method (renamed to words).
+		Received verbs method (renamed to phrases).
+		-phrases method
+			added randomized tense
+	-AdjectivePractice:
+		Created.
+		Received adjectivePractice method.
+		Received adjectives method.
+	-VerbPractice:
+		Created.
+		Received verbPractice method.
+
+15.05.29
+-General Changes:
+    -Moved project to NetBeans to help with GUI building
+-Changes in 'gui'
+    -Created and fine tuned WelcomeScreen and SectionSelection
+
+15.08.15
+-Changes in 'gui'
+    -Since the last entry, I have created a singular gui file that contains all screens
+    -LayoutManagers
+        -Fully integrated adjective and verb practice for section A
+-Changes in 'practice'
+    -removed almost all traces of text-based operation
+-Changes in 'basics'
+    -Created EVerb and QVerb
+    -Quenya verb conjugation is now done on the spot instead of being pre-written
+    -Adjective placement now makes sense in English
+-Changes in 'vocab'
+    -WordList
+        -Updated arrays
+        -Removed hyphens from verb stems
+
+15.08.19
+-Changes in 'basics'
+    -Now have subfolders 'basics.verbs' and 'basics.adjectives'
+    -constant 'NUM_TENSES' is now in the parent class Verb
+-Changes in 'vocab'
+    -Now almost all classes return their words in 2-long string arrays
+    -Cleaned up WordList:
+        -Added all words in vital vocabulary
+        -Removed all other words
+-Changes in 'practice'
+    -Added method articles() to Practice
+    -Modified AdjectivePractice.adjectives() to work around articles()
+    -Modified Translation.phrases() to include adjectives and articles
+
+15.08.21
+-Changes in 'basics'
+    -Changes in 'basics.verbs'
+        -Added future tense, aorist tense, and perfect tense
+        -Wrote some new constructors for EVerb such that irregularities in the English language can be accounted for
+    -Added method Noun.hasPlural() to account for nouns that are non-quantized
+-Changes in 'gui'
+    -Have applied almost all additional practice situations to LayoutManagers.setupPractice()
+-Changes in 'vocab'
+    -added class Preposition
+    -added array WordList.PREPOSITIONS
+    -modified VocabNoun.toString() to account for non-quantized nouns
+
+15.09.01
+-Changes in 'basics'
+    -Changes in 'basics.verbs'
+        -Added infinitives, negatives, and active participles
+        -Documented methods
+-Changes in 'vocab'
+    -Changes in 'VocabVerb'
+        -Added new method to conjugate negative verbs
+-Changes in 'practice'
+    -Changes in 'Practice'
+        -Added support for negative verbs
+
+16.04.02
+    Today I added a new feature to allow the addition of words to the vocabulary
+through the use of the application itself, easily drawing the connections between
+new words and words already in the banks. This solution came with a slew of new
+text files, as well as a new Java class called TextManipulation to do all of the
+heavy duty reading, writing, and editing of the text files. Right now there are
+21 nouns, 8 verbs, 10 adjectives, and 1 preposition in the library.
