@@ -139,6 +139,16 @@ public class SQLAmbassador
         }
     }
     
+    public static void addAssociation( String table, String columns, int [] numbers )
+    {
+        String [] components = new String [ numbers.length ];
+        for( int i = 0; i < numbers.length; i++ )
+        {
+            components[ i ] = numbers[ i ] + "";
+        }
+        addWord( table, columns, components );
+    }
+    
     public static Word getRandomWord( String table, String column )
     {
         String word = "";
@@ -296,5 +306,56 @@ public class SQLAmbassador
         }
         
         return new Word( word, id );
+    }
+    
+    public static int findIndex( String table, String column, String word )
+    {
+        int index = -1;
+        Connection conn = null;
+        Statement stmt = null;
+        try
+        {
+            // TODO code application logic here
+            Class.forName(JDBC_DRIVER);
+            
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement();
+            
+            String sql = "SELECT id FROM " + table
+                        + " WHERE " + column + " LIKE '" + word + "';";
+            
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next())
+            {
+                index = rs.getInt( "id" );
+            }
+            
+            stmt.close();
+            conn.close();
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            try
+            {
+                if(stmt != null)
+                    stmt.close();
+            } catch (SQLException ex)
+            {
+                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try
+            {
+                if(conn != null)
+                    conn.close();
+            } catch (SQLException ex)
+            {
+                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return index;
     }
 }

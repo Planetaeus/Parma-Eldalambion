@@ -8,6 +8,7 @@ package gui;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,8 +58,11 @@ public class TextManipulation
     public static final String OBJECTS_TABLE = "Action_Objects";
     public static final String OBJECTS_COLUMNS = "action_id, object_id";
     
-    public static final String INDIRECT_TABLE = "Actions_Prepositions";
+    public static final String INDIRECT_TABLE = "Action_Prepositions";
     public static final String INDIRECT_COLUMNS = "action_id, preposition_id";
+    
+    public static final String ADVERBS_TABLE = "Action_Adverbs";
+    public static final String ADVERBS_COLUMNS = "action_id, adverb_id";
     
     //Scanner to read the text files
     private static Scanner lector;
@@ -104,6 +108,40 @@ public class TextManipulation
         components = new String [] { qStem, qPast, qFuture, qPerfect, qPresent, qAorist, qInfinitive, qActive, qPassive, qVerbal };
         
         SQLAmbassador.addWord( Q_VERBS_TABLE, Q_VERBS_COLUMNS, components);
+        
+        //Subjects
+        int[] associates = qi.subjectList.getSelectedIndices();
+        int index = SQLAmbassador.findIndex( Q_VERBS_TABLE, "stem", qStem );
+        int [] indices;
+        for( int i = 0; i < associates.length; i++)
+        {
+            indices = new int [] { associates[ i ], index };
+            SQLAmbassador.addAssociation( SUBJECTS_TABLE, SUBJECTS_COLUMNS, indices );
+        }
+        
+        //Prepositions
+        associates = qi.prepositionList.getSelectedIndices();
+        for( int i = 0; i < associates.length; i++)
+        {
+            indices = new int [] { index, associates[ i ] };
+            SQLAmbassador.addAssociation( INDIRECT_TABLE, INDIRECT_COLUMNS, indices );
+        }
+        
+        //Adverbs
+        associates = qi.adverbList.getSelectedIndices();
+        for( int i = 0; i < associates.length; i++ )
+        {
+            indices = new int [] { index, associates[ i ] };
+            SQLAmbassador.addAssociation( ADVERBS_TABLE, ADVERBS_COLUMNS, indices);
+        }
+        
+        //Objects
+        associates = qi.objectList.getSelectedIndices();
+        for( int i = 0; i < associates.length; i++ )
+        {
+            indices = new int [] { index, associates[ i ] };
+            SQLAmbassador.addAssociation( OBJECTS_TABLE, OBJECTS_TABLE, indices);
+        }
     }
 
     /**

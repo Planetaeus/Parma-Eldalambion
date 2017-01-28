@@ -2012,6 +2012,7 @@ public class Instructor extends javax.swing.JFrame
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
+        subjectList.setToolTipText("");
         subjectListScroll.setViewportView(subjectList);
 
         javax.swing.GroupLayout verbChooseSubjectsLayout = new javax.swing.GroupLayout(verbChooseSubjects);
@@ -2764,7 +2765,7 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JButton addVocabButton;
     private javax.swing.JButton addWord;
     private javax.swing.JPanel addingGrounds;
-    private javax.swing.JList adverbList;
+    public javax.swing.JList adverbList;
     private javax.swing.JScrollPane adverbListScroll;
     private javax.swing.JButton bActiveParticiples;
     private javax.swing.JButton bAoristVerbs;
@@ -2823,12 +2824,12 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JList objectList;
+    public javax.swing.JList objectList;
     private javax.swing.JScrollPane objectListScroll;
     private javax.swing.JPanel practice;
     private javax.swing.JButton practiceBack;
     private javax.swing.JButton practiceCheck;
-    private javax.swing.JList prepositionList;
+    public javax.swing.JList prepositionList;
     private javax.swing.JScrollPane prepositionListScroll;
     public javax.swing.JTextField qActiveBox;
     private javax.swing.JPanel qActivePanel;
@@ -2868,7 +2869,7 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JButton selectionBack;
     private javax.swing.JScrollPane selectionScroll;
     private javax.swing.JPanel selectionScrollPanel;
-    private javax.swing.JList subjectList;
+    public javax.swing.JList subjectList;
     private javax.swing.JScrollPane subjectListScroll;
     private javax.swing.JButton toA;
     private javax.swing.JButton toAPhrases;
