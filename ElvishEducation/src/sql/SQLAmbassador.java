@@ -35,7 +35,7 @@ public class SQLAmbassador
     {
         Connection conn = null;
         Statement stmt = null;
-        String query = "SELECT id, " + columnName + " FROM " + tableName + " ORDER BY " + columnName + " ASC;";
+        String query = "SELECT id, " + columnName + " FROM " + tableName + " ORDER BY id ASC;";
         Map list = new HashMap();
         
         try
@@ -46,17 +46,15 @@ public class SQLAmbassador
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             
             stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            
-            
-            while(rs.next())
+            try (ResultSet rs = stmt.executeQuery(query))
             {
-                int id = rs.getInt("id");
-                String word = rs.getString( columnName );
-                
-                list.put( word, id );
+                while(rs.next())
+                {
+                    int id = rs.getInt("id");
+                    String word = rs.getNString( columnName );
+                    list.put(id, word);
+                }
             }
-            rs.close();
             stmt.close();
             conn.close();
         } catch (ClassNotFoundException | SQLException ex)
