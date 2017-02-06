@@ -44,7 +44,6 @@ public class Instructor extends javax.swing.JFrame
     private void initComponents()
     {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
         yggdrasil = new javax.swing.JPanel();
         welcome = new javax.swing.JPanel();
         greetings = new javax.swing.JTextArea();
@@ -103,15 +102,11 @@ public class Instructor extends javax.swing.JFrame
         givenText = new javax.swing.JTextPane();
         addVocab = new javax.swing.JPanel();
         addingGrounds = new javax.swing.JPanel();
-        addNoun = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
         addAdjective = new javax.swing.JPanel();
         addConjunction = new javax.swing.JPanel();
         addPreposition = new javax.swing.JTabbedPane();
         prepAddPrep = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
+        prepSeparator = new javax.swing.JSeparator();
         prepPluralPanel = new javax.swing.JPanel();
         prepPluralTitle = new javax.swing.JTextArea();
         prepPluralBox = new javax.swing.JTextField();
@@ -196,11 +191,39 @@ public class Instructor extends javax.swing.JFrame
         verbChooseAdverbs = new javax.swing.JPanel();
         verbAdverbScroll = new javax.swing.JScrollPane();
         verbAdverbs = new javax.swing.JList();
+        addNoun = new javax.swing.JTabbedPane();
+        nounAddNoun = new javax.swing.JPanel();
+        nounSeparator = new javax.swing.JSeparator();
+        nounESingPanel = new javax.swing.JPanel();
+        nounESingBox = new javax.swing.JTextField();
+        nounESingTitle = new javax.swing.JTextArea();
+        nounQStemPanel = new javax.swing.JPanel();
+        nounQStemBox = new javax.swing.JTextField();
+        nounQStemTitle = new javax.swing.JTextArea();
+        nounQDualPanel = new javax.swing.JPanel();
+        nounQDualBox = new javax.swing.JTextField();
+        nounQDualTitle = new javax.swing.JTextArea();
+        nounQPluralPanel = new javax.swing.JPanel();
+        nounQPluralBox = new javax.swing.JTextField();
+        nounQPluralTitle = new javax.swing.JTextArea();
+        nounEPluralPanel = new javax.swing.JPanel();
+        nounEPluralBox = new javax.swing.JTextField();
+        nounEPluralTitle = new javax.swing.JTextArea();
+        nounQSingPanel = new javax.swing.JPanel();
+        nounQSingBox = new javax.swing.JTextField();
+        nounQSingTitle = new javax.swing.JTextArea();
+        nounObjectPanel = new javax.swing.JPanel();
+        nounObjectScroll = new javax.swing.JScrollPane();
+        nounObjected = new javax.swing.JList();
+        nounActionPanel = new javax.swing.JPanel();
+        nounActionScroll = new javax.swing.JScrollPane();
+        nounActions = new javax.swing.JList();
+        nounAdjectivePanel = new javax.swing.JPanel();
+        nounAdjectiveScroll = new javax.swing.JScrollPane();
+        nounAdjectives = new javax.swing.JList();
         addWord = new javax.swing.JButton();
         wordType = new javax.swing.JComboBox();
         addBack = new javax.swing.JButton();
-
-        jCheckBox1.setText("jCheckBox1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quenya Learning");
@@ -970,13 +993,6 @@ public class Instructor extends javax.swing.JFrame
 
         addingGrounds.setLayout(new java.awt.CardLayout());
 
-        addNoun.setLayout(new java.awt.CardLayout());
-        addNoun.add(jTabbedPane2, "card3");
-        addNoun.add(jTabbedPane3, "card4");
-        addNoun.add(jTabbedPane1, "card2");
-
-        addingGrounds.add(addNoun, "blank");
-
         javax.swing.GroupLayout addAdjectiveLayout = new javax.swing.GroupLayout(addAdjective);
         addAdjective.setLayout(addAdjectiveLayout);
         addAdjectiveLayout.setHorizontalGroup(
@@ -1007,12 +1023,13 @@ public class Instructor extends javax.swing.JFrame
 
         prepAddPrep.setBackground(new java.awt.Color(0, 153, 0));
 
-        jSeparator1.setBackground(new java.awt.Color(0, 153, 0));
-        jSeparator1.setForeground(new java.awt.Color(0, 153, 0));
+        prepSeparator.setBackground(new java.awt.Color(0, 153, 0));
+        prepSeparator.setForeground(new java.awt.Color(0, 153, 0));
 
         prepPluralPanel.setBackground(new java.awt.Color(240, 190, 0));
         prepPluralPanel.setPreferredSize(new java.awt.Dimension(400, 165));
 
+        prepPluralTitle.setEditable(false);
         prepPluralTitle.setBackground(new java.awt.Color(240, 190, 0));
         prepPluralTitle.setColumns(20);
         prepPluralTitle.setFont(new java.awt.Font("Tahoma", 1, 45)); // NOI18N
@@ -1060,6 +1077,7 @@ public class Instructor extends javax.swing.JFrame
         prepDualPanel.setBackground(new java.awt.Color(240, 190, 0));
         prepDualPanel.setPreferredSize(new java.awt.Dimension(410, 165));
 
+        prepDualTitle.setEditable(false);
         prepDualTitle.setBackground(new java.awt.Color(240, 190, 0));
         prepDualTitle.setColumns(20);
         prepDualTitle.setFont(new java.awt.Font("Tahoma", 1, 45)); // NOI18N
@@ -1107,6 +1125,7 @@ public class Instructor extends javax.swing.JFrame
         prepSingPanel.setBackground(new java.awt.Color(240, 190, 0));
         prepSingPanel.setPreferredSize(new java.awt.Dimension(410, 165));
 
+        prepSingTitle.setEditable(false);
         prepSingTitle.setBackground(new java.awt.Color(240, 190, 0));
         prepSingTitle.setColumns(20);
         prepSingTitle.setFont(new java.awt.Font("Tahoma", 1, 45)); // NOI18N
@@ -1154,6 +1173,7 @@ public class Instructor extends javax.swing.JFrame
         prepEnglishPanel.setBackground(new java.awt.Color(240, 190, 0));
         prepEnglishPanel.setPreferredSize(new java.awt.Dimension(405, 165));
 
+        prepEnglishTitle.setEditable(false);
         prepEnglishTitle.setBackground(new java.awt.Color(240, 190, 0));
         prepEnglishTitle.setColumns(20);
         prepEnglishTitle.setFont(new java.awt.Font("Tahoma", 1, 45)); // NOI18N
@@ -1208,7 +1228,7 @@ public class Instructor extends javax.swing.JFrame
                     .addComponent(prepEnglishPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
                     .addComponent(prepDualPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
+                .addComponent(prepSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(prepAddPrepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(prepSingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1218,24 +1238,24 @@ public class Instructor extends javax.swing.JFrame
         prepAddPrepLayout.setVerticalGroup(
             prepAddPrepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prepAddPrepLayout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(prepAddPrepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(prepEnglishPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(prepSingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(prepAddPrepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(prepAddPrepLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(prepSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prepAddPrepLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addGroup(prepAddPrepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(prepDualPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(prepPluralPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(14, 14, 14))
         );
 
-        addPreposition.addTab("Preposition", prepAddPrep);
+        addPreposition.addTab(" Preposition ", prepAddPrep);
 
         prepVerbs.setBackground(new java.awt.Color(240, 190, 0));
         prepVerbs.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -1259,7 +1279,7 @@ public class Instructor extends javax.swing.JFrame
             .addComponent(prepVerbScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
         );
 
-        addPreposition.addTab("Verbs", prepChooseVerbs);
+        addPreposition.addTab(" Verbs ", prepChooseVerbs);
 
         addingGrounds.add(addPreposition, "Preposition");
 
@@ -1272,6 +1292,7 @@ public class Instructor extends javax.swing.JFrame
         eInfinitivePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         eInfinitivePanel.setPreferredSize(new java.awt.Dimension(425, 83));
 
+        eInfinitiveTitle.setEditable(false);
         eInfinitiveTitle.setBackground(new java.awt.Color(240, 190, 0));
         eInfinitiveTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eInfinitiveTitle.setText("Infinitive");
@@ -1323,6 +1344,7 @@ public class Instructor extends javax.swing.JFrame
         ePastPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ePastPanel.setPreferredSize(new java.awt.Dimension(425, 83));
 
+        ePastTitle.setEditable(false);
         ePastTitle.setBackground(new java.awt.Color(240, 190, 0));
         ePastTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ePastTitle.setText("Past Tense");
@@ -1374,6 +1396,7 @@ public class Instructor extends javax.swing.JFrame
         ePerfectPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ePerfectPanel.setPreferredSize(new java.awt.Dimension(417, 83));
 
+        ePerfectTitle.setEditable(false);
         ePerfectTitle.setBackground(new java.awt.Color(240, 190, 0));
         ePerfectTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ePerfectTitle.setText("Perfect Tense");
@@ -1425,6 +1448,7 @@ public class Instructor extends javax.swing.JFrame
         eAoristPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         eAoristPanel.setPreferredSize(new java.awt.Dimension(425, 83));
 
+        eAoristTitle.setEditable(false);
         eAoristTitle.setBackground(new java.awt.Color(240, 190, 0));
         eAoristTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eAoristTitle.setText("Aorist");
@@ -1476,6 +1500,7 @@ public class Instructor extends javax.swing.JFrame
         eAoristAltPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         eAoristAltPanel.setPreferredSize(new java.awt.Dimension(417, 65));
 
+        eAoristAltTitle.setEditable(false);
         eAoristAltTitle.setBackground(new java.awt.Color(240, 190, 0));
         eAoristAltTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eAoristAltTitle.setText("Alternative Aorist");
@@ -1527,6 +1552,7 @@ public class Instructor extends javax.swing.JFrame
         eActivePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         eActivePanel.setPreferredSize(new java.awt.Dimension(425, 83));
 
+        eActiveTitle.setEditable(false);
         eActiveTitle.setBackground(new java.awt.Color(240, 190, 0));
         eActiveTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eActiveTitle.setText("Active Participle");
@@ -1578,6 +1604,7 @@ public class Instructor extends javax.swing.JFrame
         ePassivePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ePassivePanel.setPreferredSize(new java.awt.Dimension(417, 83));
 
+        ePassiveTitle.setEditable(false);
         ePassiveTitle.setBackground(new java.awt.Color(240, 190, 0));
         ePassiveTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ePassiveTitle.setText("Passive Participle");
@@ -1629,6 +1656,7 @@ public class Instructor extends javax.swing.JFrame
         eVerbalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         eVerbalPanel.setPreferredSize(new java.awt.Dimension(851, 67));
 
+        eVerbalTitle.setEditable(false);
         eVerbalTitle.setBackground(new java.awt.Color(240, 190, 0));
         eVerbalTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eVerbalTitle.setText("Verbal Noun");
@@ -1723,6 +1751,7 @@ public class Instructor extends javax.swing.JFrame
         qStemPanel.setBackground(new java.awt.Color(240, 190, 0));
         qStemPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qStemTitle.setEditable(false);
         qStemTitle.setBackground(new java.awt.Color(240, 190, 0));
         qStemTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qStemTitle.setText("Stem");
@@ -1773,6 +1802,7 @@ public class Instructor extends javax.swing.JFrame
         qPastPanel.setBackground(new java.awt.Color(240, 190, 0));
         qPastPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qPastTitle.setEditable(false);
         qPastTitle.setBackground(new java.awt.Color(240, 190, 0));
         qPastTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qPastTitle.setText("Past Tense");
@@ -1823,6 +1853,7 @@ public class Instructor extends javax.swing.JFrame
         qFuturePanel.setBackground(new java.awt.Color(240, 190, 0));
         qFuturePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qFutureTitle.setEditable(false);
         qFutureTitle.setBackground(new java.awt.Color(240, 190, 0));
         qFutureTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qFutureTitle.setText("Future Tense");
@@ -1873,6 +1904,7 @@ public class Instructor extends javax.swing.JFrame
         qPerfectPanel.setBackground(new java.awt.Color(240, 190, 0));
         qPerfectPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qPerfectTitle.setEditable(false);
         qPerfectTitle.setBackground(new java.awt.Color(240, 190, 0));
         qPerfectTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qPerfectTitle.setText("Perfect Tense");
@@ -1923,6 +1955,7 @@ public class Instructor extends javax.swing.JFrame
         qPresentPanel.setBackground(new java.awt.Color(240, 190, 0));
         qPresentPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qPresentTitle.setEditable(false);
         qPresentTitle.setBackground(new java.awt.Color(240, 190, 0));
         qPresentTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qPresentTitle.setText("Present Tense");
@@ -1973,6 +2006,7 @@ public class Instructor extends javax.swing.JFrame
         qAoristPanel.setBackground(new java.awt.Color(240, 190, 0));
         qAoristPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qAoristTitle.setEditable(false);
         qAoristTitle.setBackground(new java.awt.Color(240, 190, 0));
         qAoristTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qAoristTitle.setText("Aorist");
@@ -2023,6 +2057,7 @@ public class Instructor extends javax.swing.JFrame
         qInfinitivePanel.setBackground(new java.awt.Color(240, 190, 0));
         qInfinitivePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qInfinitiveTitle.setEditable(false);
         qInfinitiveTitle.setBackground(new java.awt.Color(240, 190, 0));
         qInfinitiveTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qInfinitiveTitle.setText("Infinitive");
@@ -2073,6 +2108,7 @@ public class Instructor extends javax.swing.JFrame
         qActivePanel.setBackground(new java.awt.Color(240, 190, 0));
         qActivePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qActiveTitle.setEditable(false);
         qActiveTitle.setBackground(new java.awt.Color(240, 190, 0));
         qActiveTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qActiveTitle.setText("Active Participle");
@@ -2123,6 +2159,7 @@ public class Instructor extends javax.swing.JFrame
         qPassivePanel.setBackground(new java.awt.Color(240, 190, 0));
         qPassivePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        qPassiveTitle.setEditable(false);
         qPassiveTitle.setBackground(new java.awt.Color(240, 190, 0));
         qPassiveTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qPassiveTitle.setText("Passive Participle");
@@ -2174,6 +2211,7 @@ public class Instructor extends javax.swing.JFrame
         qVerbalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         qVerbalPanel.setPreferredSize(new java.awt.Dimension(405, 65));
 
+        qVerbalTitle.setEditable(false);
         qVerbalTitle.setBackground(new java.awt.Color(240, 190, 0));
         qVerbalTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         qVerbalTitle.setText("Verbal Noun");
@@ -2286,7 +2324,7 @@ public class Instructor extends javax.swing.JFrame
         );
         verbChooseSubjectsLayout.setVerticalGroup(
             verbChooseSubjectsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(verbSubjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+            .addComponent(verbSubjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
         );
 
         addVerb.addTab("Subjects", verbChooseSubjects);
@@ -2310,7 +2348,7 @@ public class Instructor extends javax.swing.JFrame
         );
         verbChooseObjectsLayout.setVerticalGroup(
             verbChooseObjectsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(verbObjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+            .addComponent(verbObjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
         );
 
         addVerb.addTab("Objects", verbChooseObjects);
@@ -2334,7 +2372,7 @@ public class Instructor extends javax.swing.JFrame
         );
         verbChoosePrepositionsLayout.setVerticalGroup(
             verbChoosePrepositionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(verbPrepositionScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+            .addComponent(verbPrepositionScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
         );
 
         addVerb.addTab("Prepositions", verbChoosePrepositions);
@@ -2358,13 +2396,418 @@ public class Instructor extends javax.swing.JFrame
         );
         verbChooseAdverbsLayout.setVerticalGroup(
             verbChooseAdverbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(verbAdverbScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+            .addComponent(verbAdverbScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
         );
 
         addVerb.addTab("Adverbs", verbChooseAdverbs);
 
         addingGrounds.add(addVerb, "Verb");
         addVerb.getAccessibleContext().setAccessibleName("");
+
+        addNoun.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+
+        nounAddNoun.setBackground(new java.awt.Color(0, 153, 0));
+
+        nounSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        nounESingPanel.setBackground(new java.awt.Color(240, 190, 0));
+
+        nounESingBox.setBackground(new java.awt.Color(240, 190, 0));
+        nounESingBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        nounESingBox.setText("Type here...");
+        nounESingBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        nounESingBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                nounESingBoxActionPerformed(evt);
+            }
+        });
+
+        nounESingTitle.setEditable(false);
+        nounESingTitle.setBackground(new java.awt.Color(240, 190, 0));
+        nounESingTitle.setColumns(20);
+        nounESingTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounESingTitle.setRows(5);
+        nounESingTitle.setText("English\nSingular");
+        nounESingTitle.setWrapStyleWord(true);
+        nounESingTitle.setBorder(null);
+
+        javax.swing.GroupLayout nounESingPanelLayout = new javax.swing.GroupLayout(nounESingPanel);
+        nounESingPanel.setLayout(nounESingPanelLayout);
+        nounESingPanelLayout.setHorizontalGroup(
+            nounESingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nounESingPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(nounESingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nounESingBox, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        nounESingPanelLayout.setVerticalGroup(
+            nounESingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nounESingPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nounESingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(nounESingPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(nounESingBox, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        nounQStemPanel.setBackground(new java.awt.Color(240, 190, 0));
+        nounQStemPanel.setPreferredSize(new java.awt.Dimension(383, 119));
+
+        nounQStemBox.setBackground(new java.awt.Color(240, 190, 0));
+        nounQStemBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        nounQStemBox.setText("Type here...");
+        nounQStemBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        nounQStemBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                nounQStemBoxActionPerformed(evt);
+            }
+        });
+
+        nounQStemTitle.setEditable(false);
+        nounQStemTitle.setBackground(new java.awt.Color(240, 190, 0));
+        nounQStemTitle.setColumns(20);
+        nounQStemTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounQStemTitle.setRows(5);
+        nounQStemTitle.setText("Quenya\nStem");
+        nounQStemTitle.setWrapStyleWord(true);
+        nounQStemTitle.setBorder(null);
+
+        javax.swing.GroupLayout nounQStemPanelLayout = new javax.swing.GroupLayout(nounQStemPanel);
+        nounQStemPanel.setLayout(nounQStemPanelLayout);
+        nounQStemPanelLayout.setHorizontalGroup(
+            nounQStemPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nounQStemPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(nounQStemTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nounQStemBox, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        nounQStemPanelLayout.setVerticalGroup(
+            nounQStemPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nounQStemPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nounQStemTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(nounQStemPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(nounQStemBox, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        nounQDualPanel.setBackground(new java.awt.Color(240, 190, 0));
+        nounQDualPanel.setPreferredSize(new java.awt.Dimension(383, 114));
+
+        nounQDualBox.setBackground(new java.awt.Color(240, 190, 0));
+        nounQDualBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        nounQDualBox.setText("Type here...");
+        nounQDualBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        nounQDualBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                nounQDualBoxActionPerformed(evt);
+            }
+        });
+
+        nounQDualTitle.setEditable(false);
+        nounQDualTitle.setBackground(new java.awt.Color(240, 190, 0));
+        nounQDualTitle.setColumns(20);
+        nounQDualTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounQDualTitle.setRows(5);
+        nounQDualTitle.setText("Quenya\nDual");
+        nounQDualTitle.setWrapStyleWord(true);
+        nounQDualTitle.setBorder(null);
+
+        javax.swing.GroupLayout nounQDualPanelLayout = new javax.swing.GroupLayout(nounQDualPanel);
+        nounQDualPanel.setLayout(nounQDualPanelLayout);
+        nounQDualPanelLayout.setHorizontalGroup(
+            nounQDualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nounQDualPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(nounQDualTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nounQDualBox, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        nounQDualPanelLayout.setVerticalGroup(
+            nounQDualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nounQDualPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nounQDualTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(nounQDualPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(nounQDualBox, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        nounQPluralPanel.setBackground(new java.awt.Color(240, 190, 0));
+        nounQPluralPanel.setPreferredSize(new java.awt.Dimension(383, 114));
+
+        nounQPluralBox.setBackground(new java.awt.Color(240, 190, 0));
+        nounQPluralBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        nounQPluralBox.setText("Type here...");
+        nounQPluralBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        nounQPluralBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                nounQPluralBoxActionPerformed(evt);
+            }
+        });
+
+        nounQPluralTitle.setEditable(false);
+        nounQPluralTitle.setBackground(new java.awt.Color(240, 190, 0));
+        nounQPluralTitle.setColumns(20);
+        nounQPluralTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounQPluralTitle.setRows(5);
+        nounQPluralTitle.setText("Quenya\nPlural");
+        nounQPluralTitle.setWrapStyleWord(true);
+        nounQPluralTitle.setBorder(null);
+
+        javax.swing.GroupLayout nounQPluralPanelLayout = new javax.swing.GroupLayout(nounQPluralPanel);
+        nounQPluralPanel.setLayout(nounQPluralPanelLayout);
+        nounQPluralPanelLayout.setHorizontalGroup(
+            nounQPluralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nounQPluralPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(nounQPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nounQPluralBox, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        nounQPluralPanelLayout.setVerticalGroup(
+            nounQPluralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nounQPluralPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nounQPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(nounQPluralPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(nounQPluralBox, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        nounEPluralPanel.setBackground(new java.awt.Color(240, 190, 0));
+
+        nounEPluralBox.setBackground(new java.awt.Color(240, 190, 0));
+        nounEPluralBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        nounEPluralBox.setText("Type here...");
+        nounEPluralBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        nounEPluralBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                nounEPluralBoxActionPerformed(evt);
+            }
+        });
+
+        nounEPluralTitle.setEditable(false);
+        nounEPluralTitle.setBackground(new java.awt.Color(240, 190, 0));
+        nounEPluralTitle.setColumns(20);
+        nounEPluralTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounEPluralTitle.setRows(5);
+        nounEPluralTitle.setText("English\nPlural");
+        nounEPluralTitle.setWrapStyleWord(true);
+        nounEPluralTitle.setBorder(null);
+
+        javax.swing.GroupLayout nounEPluralPanelLayout = new javax.swing.GroupLayout(nounEPluralPanel);
+        nounEPluralPanel.setLayout(nounEPluralPanelLayout);
+        nounEPluralPanelLayout.setHorizontalGroup(
+            nounEPluralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nounEPluralPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(nounEPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nounEPluralBox, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        nounEPluralPanelLayout.setVerticalGroup(
+            nounEPluralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nounEPluralPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nounEPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(nounEPluralPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(nounEPluralBox, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        nounQSingPanel.setBackground(new java.awt.Color(240, 190, 0));
+        nounQSingPanel.setPreferredSize(new java.awt.Dimension(408, 119));
+
+        nounQSingBox.setBackground(new java.awt.Color(240, 190, 0));
+        nounQSingBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        nounQSingBox.setText("Type here...");
+        nounQSingBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        nounQSingBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                nounQSingBoxActionPerformed(evt);
+            }
+        });
+
+        nounQSingTitle.setEditable(false);
+        nounQSingTitle.setBackground(new java.awt.Color(240, 190, 0));
+        nounQSingTitle.setColumns(20);
+        nounQSingTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounQSingTitle.setRows(5);
+        nounQSingTitle.setText("Quenya\nSingular");
+        nounQSingTitle.setWrapStyleWord(true);
+        nounQSingTitle.setBorder(null);
+
+        javax.swing.GroupLayout nounQSingPanelLayout = new javax.swing.GroupLayout(nounQSingPanel);
+        nounQSingPanel.setLayout(nounQSingPanelLayout);
+        nounQSingPanelLayout.setHorizontalGroup(
+            nounQSingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nounQSingPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(nounQSingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nounQSingBox, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        nounQSingPanelLayout.setVerticalGroup(
+            nounQSingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nounQSingPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nounQSingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(nounQSingPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(nounQSingBox, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout nounAddNounLayout = new javax.swing.GroupLayout(nounAddNoun);
+        nounAddNoun.setLayout(nounAddNounLayout);
+        nounAddNounLayout.setHorizontalGroup(
+            nounAddNounLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nounAddNounLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(nounAddNounLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nounESingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nounQStemPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
+                    .addComponent(nounQDualPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nounSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(nounAddNounLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nounQSingPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nounEPluralPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nounQPluralPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        nounAddNounLayout.setVerticalGroup(
+            nounAddNounLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nounAddNounLayout.createSequentialGroup()
+                .addGroup(nounAddNounLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(nounAddNounLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(nounAddNounLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(nounAddNounLayout.createSequentialGroup()
+                                .addComponent(nounESingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nounQStemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nounQDualPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(nounAddNounLayout.createSequentialGroup()
+                                .addComponent(nounEPluralPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nounQSingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nounQPluralPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(nounSeparator))
+                .addContainerGap())
+        );
+
+        addNoun.addTab(" Noun ", nounAddNoun);
+
+        nounObjected.setBackground(new java.awt.Color(240, 190, 0));
+        nounObjected.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounObjected.setForeground(new java.awt.Color(0, 153, 0));
+        nounObjected.setModel(new javax.swing.AbstractListModel()
+        {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        nounObjectScroll.setViewportView(nounObjected);
+
+        javax.swing.GroupLayout nounObjectPanelLayout = new javax.swing.GroupLayout(nounObjectPanel);
+        nounObjectPanel.setLayout(nounObjectPanelLayout);
+        nounObjectPanelLayout.setHorizontalGroup(
+            nounObjectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(nounObjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        );
+        nounObjectPanelLayout.setVerticalGroup(
+            nounObjectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(nounObjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+        );
+
+        addNoun.addTab(" Objectifying Verbs ", nounObjectPanel);
+
+        nounActions.setBackground(new java.awt.Color(240, 190, 0));
+        nounActions.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounActions.setForeground(new java.awt.Color(0, 153, 0));
+        nounActions.setModel(new javax.swing.AbstractListModel()
+        {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        nounActionScroll.setViewportView(nounActions);
+
+        javax.swing.GroupLayout nounActionPanelLayout = new javax.swing.GroupLayout(nounActionPanel);
+        nounActionPanel.setLayout(nounActionPanelLayout);
+        nounActionPanelLayout.setHorizontalGroup(
+            nounActionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(nounActionScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        );
+        nounActionPanelLayout.setVerticalGroup(
+            nounActionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(nounActionScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+        );
+
+        addNoun.addTab(" Actions ", nounActionPanel);
+
+        nounAdjectives.setBackground(new java.awt.Color(240, 190, 0));
+        nounAdjectives.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        nounAdjectives.setForeground(new java.awt.Color(0, 153, 0));
+        nounAdjectives.setModel(new javax.swing.AbstractListModel()
+        {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        nounAdjectiveScroll.setViewportView(nounAdjectives);
+
+        javax.swing.GroupLayout nounAdjectivePanelLayout = new javax.swing.GroupLayout(nounAdjectivePanel);
+        nounAdjectivePanel.setLayout(nounAdjectivePanelLayout);
+        nounAdjectivePanelLayout.setHorizontalGroup(
+            nounAdjectivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(nounAdjectiveScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        );
+        nounAdjectivePanelLayout.setVerticalGroup(
+            nounAdjectivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(nounAdjectiveScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+        );
+
+        addNoun.addTab(" Adjectives ", nounAdjectivePanel);
+
+        addingGrounds.add(addNoun, "Noun");
 
         addWord.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         addWord.setText("Add Word");
@@ -2937,19 +3380,57 @@ public class Instructor extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_prepEnglishBoxActionPerformed
 
+    private void nounQSingBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounQSingBoxActionPerformed
+    {//GEN-HEADEREND:event_nounQSingBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nounQSingBoxActionPerformed
+
+    private void nounEPluralBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounEPluralBoxActionPerformed
+    {//GEN-HEADEREND:event_nounEPluralBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nounEPluralBoxActionPerformed
+
+    private void nounQPluralBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounQPluralBoxActionPerformed
+    {//GEN-HEADEREND:event_nounQPluralBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nounQPluralBoxActionPerformed
+
+    private void nounQDualBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounQDualBoxActionPerformed
+    {//GEN-HEADEREND:event_nounQDualBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nounQDualBoxActionPerformed
+
+    private void nounQStemBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounQStemBoxActionPerformed
+    {//GEN-HEADEREND:event_nounQStemBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nounQStemBoxActionPerformed
+
+    private void nounESingBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounESingBoxActionPerformed
+    {//GEN-HEADEREND:event_nounESingBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nounESingBoxActionPerformed
+
     private void resetAdjective()
     {
 
     }
     private void resetNoun()
     {
-
+        resetText( nounESingBox ); resetText( nounEPluralBox );
+        resetText( nounQStemBox ); resetText( nounQSingBox );
+        resetText( nounQDualBox ); resetText( nounQPluralBox );
+        
+        nounObjected.clearSelection();
+        nounActions.clearSelection();
+        nounAdjectives.clearSelection();
+        
+        
     }
 
     private void resetVerb()
     {
         //Reset English Tab
-        resetText(eInfinitiveBox ); resetText( eAoristBox ); resetText( ePastBox );
+        resetText( eInfinitiveBox ); resetText( eAoristBox ); resetText( ePastBox );
         resetText( eAoristAltBox ); resetText( ePerfectBox ); resetText( eActiveBox );
         resetText( eVerbalBox ); resetText( ePassiveBox );
 
@@ -2999,6 +3480,7 @@ public class Instructor extends javax.swing.JFrame
 
         verbAdverbs.setModel( adverbModel );
         
+        nounAdjectives.setModel( adjectiveModel );
     }
 
     private void updateNounModels()
@@ -3021,6 +3503,9 @@ public class Instructor extends javax.swing.JFrame
         DefaultListModel verbModel = TextManipulation.createModel( Index.E_VERBS_TABLE, "infinitive" );
 
         prepVerbs.setModel( verbModel );
+        
+        nounObjected.setModel( verbModel );
+        nounActions.setModel( verbModel );
     }
 
     /**
@@ -3098,7 +3583,7 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JPanel addAdjective;
     private javax.swing.JButton addBack;
     private javax.swing.JPanel addConjunction;
-    private javax.swing.JPanel addNoun;
+    private javax.swing.JTabbedPane addNoun;
     private javax.swing.JTabbedPane addPreposition;
     private javax.swing.JTabbedPane addVerb;
     private javax.swing.JPanel addVocab;
@@ -3158,11 +3643,35 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JTextArea incorrect;
     private javax.swing.JScrollPane incorrectScroll;
     private javax.swing.JTextField input;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JPanel nounActionPanel;
+    private javax.swing.JScrollPane nounActionScroll;
+    public javax.swing.JList nounActions;
+    private javax.swing.JPanel nounAddNoun;
+    private javax.swing.JPanel nounAdjectivePanel;
+    private javax.swing.JScrollPane nounAdjectiveScroll;
+    public javax.swing.JList nounAdjectives;
+    public javax.swing.JTextField nounEPluralBox;
+    private javax.swing.JPanel nounEPluralPanel;
+    private javax.swing.JTextArea nounEPluralTitle;
+    public javax.swing.JTextField nounESingBox;
+    private javax.swing.JPanel nounESingPanel;
+    private javax.swing.JTextArea nounESingTitle;
+    private javax.swing.JPanel nounObjectPanel;
+    private javax.swing.JScrollPane nounObjectScroll;
+    public javax.swing.JList nounObjected;
+    public javax.swing.JTextField nounQDualBox;
+    private javax.swing.JPanel nounQDualPanel;
+    private javax.swing.JTextArea nounQDualTitle;
+    public javax.swing.JTextField nounQPluralBox;
+    private javax.swing.JPanel nounQPluralPanel;
+    private javax.swing.JTextArea nounQPluralTitle;
+    public javax.swing.JTextField nounQSingBox;
+    private javax.swing.JPanel nounQSingPanel;
+    private javax.swing.JTextArea nounQSingTitle;
+    public javax.swing.JTextField nounQStemBox;
+    private javax.swing.JPanel nounQStemPanel;
+    private javax.swing.JTextArea nounQStemTitle;
+    private javax.swing.JSeparator nounSeparator;
     private javax.swing.JPanel practice;
     private javax.swing.JButton practiceBack;
     private javax.swing.JButton practiceCheck;
@@ -3172,14 +3681,12 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JPanel prepDualPanel;
     private javax.swing.JTextArea prepDualTitle;
     public javax.swing.JTextField prepEnglishBox;
-    private javax.swing.JTextField prepEnglishBox4;
     private javax.swing.JPanel prepEnglishPanel;
-    private javax.swing.JPanel prepEnglishPanel4;
     private javax.swing.JTextArea prepEnglishTitle;
-    private javax.swing.JTextArea prepEnglishTitle4;
     public javax.swing.JTextField prepPluralBox;
     private javax.swing.JPanel prepPluralPanel;
     private javax.swing.JTextArea prepPluralTitle;
+    private javax.swing.JSeparator prepSeparator;
     public javax.swing.JTextField prepSingBox;
     private javax.swing.JPanel prepSingPanel;
     private javax.swing.JTextArea prepSingTitle;

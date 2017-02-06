@@ -5,15 +5,7 @@
  */
 package gui;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import sql.SQLAmbassador;
 
@@ -26,6 +18,7 @@ import sql.SQLAmbassador;
  */
 public class TextManipulation
 {
+    
     /**
      * This method goes through the necessary processes of adding an adjective
      * to the program's vocabulary as well as modifying the related nouns
@@ -47,7 +40,32 @@ public class TextManipulation
      */
     public static void addNoun( Instructor qi )
     {
+        String eSing = qi.nounESingBox.getText(), ePlural = qi.nounEPluralBox.getText(),
+               qStem = qi.nounQStemBox.getText(), qSing = qi.nounQSingBox.getText(),
+               qDual = qi.nounQDualBox.getText(), qPlural = qi.nounQPluralBox.getText();
         
+        String [] components = { eSing, ePlural };
+        
+        SQLAmbassador.addWord( Index.E_NOUNS_TABLE, Index.E_NOUNS_COLUMNS, components );
+        
+        components = new String [] { qStem, qSing, qDual, qPlural };
+        
+        SQLAmbassador.addWord( Index.Q_NOUNS_TABLE, Index.Q_NOUNS_COLUMNS, components );
+        
+        int index = SQLAmbassador.findIndex( Index.E_NOUNS_TABLE, "singular", eSing );
+        int [] associates;
+        
+        //Actions
+        associates = qi.nounActions.getSelectedIndices();
+        addAssociate( "Subject", index, associates );
+        
+        //Adjectives
+        associates = qi.nounAdjectives.getSelectedIndices();
+        addAssociate( "Descriptor", index, associates );
+        
+        //Objectifying Actions
+        associates = qi.nounObjected.getSelectedIndices();
+        addAssociate( "Object", index, associates );
     }
 
     /**
@@ -68,15 +86,8 @@ public class TextManipulation
         //Subjects
         int[] associates = qi.prepVerbs.getSelectedIndices();
         int index = SQLAmbassador.findIndex( Index.PREPOSITIONS_TABLE, "english", english );
-        int [] indices;
-        if( associates.length > 0 )
-        {
-            for( int i = 0; i < associates.length; i++)
-            {
-                indices = new int [] { associates[ i ], index };
-                SQLAmbassador.addAssociation(Index.INDIRECT_TABLE, Index.INDIRECT_COLUMNS, indices );
-            }
-        }
+        
+        addAssociate( "Preposition", associates, index );
     }
 
     /**
@@ -109,51 +120,24 @@ public class TextManipulation
         
         SQLAmbassador.addWord( Index.Q_VERBS_TABLE, Index.Q_VERBS_COLUMNS, components );
         
-        //Subjects
-        int[] associates = qi.verbSubjects.getSelectedIndices();
+        int[] associates;
         int index = SQLAmbassador.findIndex( Index.Q_VERBS_TABLE, "stem", qStem );
-        int [] indices;
-        if( associates.length > 0 )
-        {
-            for( int i = 0; i < associates.length; i++)
-            {
-                indices = new int [] { associates[ i ], index };
-                SQLAmbassador.addAssociation(Index.SUBJECTS_TABLE, Index.SUBJECTS_COLUMNS, indices );
-            }
-        }
+        
+        //Subjects
+        associates = qi.verbSubjects.getSelectedIndices();
+        addAssociate( "Subject", associates, index );
         
         //Prepositions
         associates = qi.verbPreposition.getSelectedIndices();
-        if( associates.length > 0 )
-        {
-            for( int i = 0; i < associates.length; i++)
-            {
-                indices = new int [] { index, associates[ i ] };
-                SQLAmbassador.addAssociation(Index.INDIRECT_TABLE, Index.INDIRECT_COLUMNS, indices );
-            }
-        }
+        addAssociate( "Preposition", index, associates );
         
         //Adverbs
         associates = qi.verbAdverbs.getSelectedIndices();
-        if( associates.length > 0 )
-        {
-            for( int i = 0; i < associates.length; i++ )
-            {
-                indices = new int [] { index, associates[ i ] };
-                SQLAmbassador.addAssociation(Index.ADVERBS_TABLE, Index.ADVERBS_COLUMNS, indices);
-            }
-        }
+        addAssociate( "Adverb", index, associates );
         
         //Objects
         associates = qi.verbObjects.getSelectedIndices();
-        if( associates.length > 0 )
-        {
-            for( int i = 0; i < associates.length; i++ )
-            {
-                indices = new int [] { index, associates[ i ] };
-                SQLAmbassador.addAssociation(Index.OBJECTS_TABLE, Index.OBJECTS_COLUMNS, indices);
-            }
-        }
+        addAssociate( "Object", index, associates );
     }
 
     /**
@@ -166,15 +150,20 @@ public class TextManipulation
      */
     public static DefaultListModel createModel( String tableName, String columnName )
     {
-        DefaultListModel model = new DefaultListModel();
-        
         Map wordList = SQLAmbassador.mapWords( tableName, columnName );
         
-        if( wordList.size() > 0 )
+        return mapModel( wordList );
+    }
+    
+    public static DefaultListModel mapModel( Map map )
+    {
+        DefaultListModel model = new DefaultListModel();
+        
+        if( map.size() > 0 )
         {
-            for( int i = 0; i < wordList.size(); i++ )
+            for( int i = 0; i < map.size(); i++ )
             {
-                model.add( i, wordList.get( i ) );
+                model.add( i, map.get( i ) );
                 
                 System.out.println( i + " " + model.get( i ) );
             }
@@ -187,4 +176,73 @@ public class TextManipulation
         return model;
     }
     
+    public static void addAssociate( String type, int index, int [] associates )
+    {
+        switch( type )
+        {
+            case "Subject":
+                addAssociate( Index.SUBJECTS_TABLE, Index.SUBJECTS_COLUMNS, index, associates );
+                break;
+            case "Object":
+                addAssociate( Index.OBJECTS_TABLE, Index.OBJECTS_COLUMNS, index, associates );
+                break;
+            case "Preposition":
+                addAssociate( Index.INDIRECT_TABLE, Index.INDIRECT_COLUMNS, index, associates );
+                break;
+            case "Adverb":
+                addAssociate( Index.ADVERBS_TABLE, Index.ADVERBS_COLUMNS, index, associates );
+                break;
+            case "Descriptor":
+                addAssociate( Index.DESCRIPTORS_TABLE, Index.DESCRIPTORS_COLUMNS, index, associates );
+                break;
+            default:
+                System.out.println( "Oh bother." );
+                break;
+        }
+    }
+    
+    public static void addAssociate( String type, int [] associates, int index )
+    {
+        switch( type )
+        {
+            case "Subject":
+                addAssociate( Index.SUBJECTS_TABLE, Index.SUBJECTS_COLUMNS, associates, index );
+                break;
+            case "Object":
+                addAssociate( Index.OBJECTS_TABLE, Index.OBJECTS_COLUMNS, associates, index );
+                break;
+            case "Preposition":
+                addAssociate( Index.INDIRECT_TABLE, Index.INDIRECT_COLUMNS, associates, index );
+                break;
+            case "Adverb":
+                addAssociate( Index.ADVERBS_TABLE, Index.ADVERBS_COLUMNS, associates, index );
+                break;
+            case "Descriptor":
+                addAssociate( Index.DESCRIPTORS_TABLE, Index.DESCRIPTORS_COLUMNS, associates, index );
+                break;
+            default:
+                System.out.println( "Oh bother." );
+                break;
+        }
+    }
+    
+    public static void addAssociate( String tableName, String columnName, int [] associates, int index )
+    {
+        int [] indices;
+        for( int associate: associates )
+        {
+            indices = new int [] { associate, index };
+            SQLAmbassador.addAssociation( tableName, columnName, indices );
+        }
+    }
+    
+    public static void addAssociate( String tableName, String columnName, int index, int [] associates )
+    {
+        int [] indices;
+        for( int associate: associates )
+        {
+            indices = new int [] { index, associate };
+            SQLAmbassador.addAssociation( tableName, columnName, indices );
+        }
+    }
 }

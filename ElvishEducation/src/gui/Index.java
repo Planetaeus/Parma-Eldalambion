@@ -5,6 +5,12 @@
  */
 package gui;
 
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+import sql.SQLAmbassador;
+
 /**
  * This class is just a place to keep all of the table and column names for
  * everything in the SQL database.
