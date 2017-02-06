@@ -1354,46 +1354,6 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="addAdjective">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card4"/>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
-                <Container class="javax.swing.JPanel" name="addConjunction">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card5"/>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JTabbedPane" name="addPreposition">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -3633,7 +3593,7 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="verbSubjectScroll" alignment="0" pref="334" max="32767" attributes="0"/>
+                              <Component id="verbSubjectScroll" alignment="0" pref="330" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -3693,7 +3653,7 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="verbObjectScroll" alignment="0" pref="334" max="32767" attributes="0"/>
+                              <Component id="verbObjectScroll" alignment="0" pref="330" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -3751,7 +3711,7 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="verbPrepositionScroll" alignment="0" pref="334" max="32767" attributes="0"/>
+                              <Component id="verbPrepositionScroll" alignment="0" pref="330" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -3809,7 +3769,7 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="verbAdverbScroll" alignment="0" pref="334" max="32767" attributes="0"/>
+                              <Component id="verbAdverbScroll" alignment="0" pref="330" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -4575,6 +4535,148 @@
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                               </AuxValues>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JTabbedPane" name="addAdjective">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="36" style="1"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="Adjective"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="adjectiveAddAdjective">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName=" Adjective ">
+                            <Property name="tabTitle" type="java.lang.String" value=" Adjective "/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="851" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="376" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="adjectiveNouns">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName=" Nouns ">
+                            <Property name="tabTitle" type="java.lang.String" value=" Nouns "/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane2" alignment="0" pref="851" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane2" alignment="0" pref="376" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JList" name="jList2">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="be" red="f0" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Tahoma" size="36" style="1"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="99" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                                  <StringArray count="5">
+                                    <StringItem index="0" value="Item 1"/>
+                                    <StringItem index="1" value="Item 2"/>
+                                    <StringItem index="2" value="Item 3"/>
+                                    <StringItem index="3" value="Item 4"/>
+                                    <StringItem index="4" value="Item 5"/>
+                                  </StringArray>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="adverbVerbs">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName=" Verbs ">
+                            <Property name="tabTitle" type="java.lang.String" value=" Verbs "/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane1" alignment="0" pref="851" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane1" alignment="0" pref="376" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JList" name="jList1">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="be" red="f0" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Tahoma" size="36" style="1"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="99" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                                  <StringArray count="5">
+                                    <StringItem index="0" value="Item 1"/>
+                                    <StringItem index="1" value="Item 2"/>
+                                    <StringItem index="2" value="Item 3"/>
+                                    <StringItem index="3" value="Item 4"/>
+                                    <StringItem index="4" value="Item 5"/>
+                                  </StringArray>
+                                </Property>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>

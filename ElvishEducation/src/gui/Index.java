@@ -5,12 +5,6 @@
  */
 package gui;
 
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
-import sql.SQLAmbassador;
-
 /**
  * This class is just a place to keep all of the table and column names for
  * everything in the SQL database.
@@ -39,9 +33,6 @@ public class Index
     
     public static final String ADVERBS_TABLE = "Action_Adverbs";
     public static final String ADVERBS_COLUMNS = "action_id, adverb_id";
-    
-    public static final String CONJUNCTIONS_TABLE = "Conjunctions";
-    public static final String CONJUNCTIONS_COLUMNS = "english, quenya, type";
     
     public static final String DESCRIPTORS_TABLE = "Noun_Adjectives";
     public static final String DESCRIPTORS_COLUMNS = "noun_id, adjective_id";

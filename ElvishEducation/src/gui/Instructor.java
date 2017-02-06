@@ -102,8 +102,6 @@ public class Instructor extends javax.swing.JFrame
         givenText = new javax.swing.JTextPane();
         addVocab = new javax.swing.JPanel();
         addingGrounds = new javax.swing.JPanel();
-        addAdjective = new javax.swing.JPanel();
-        addConjunction = new javax.swing.JPanel();
         addPreposition = new javax.swing.JTabbedPane();
         prepAddPrep = new javax.swing.JPanel();
         prepSeparator = new javax.swing.JSeparator();
@@ -221,6 +219,14 @@ public class Instructor extends javax.swing.JFrame
         nounAdjectivePanel = new javax.swing.JPanel();
         nounAdjectiveScroll = new javax.swing.JScrollPane();
         nounAdjectives = new javax.swing.JList();
+        addAdjective = new javax.swing.JTabbedPane();
+        adjectiveAddAdjective = new javax.swing.JPanel();
+        adjectiveNouns = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList();
+        adverbVerbs = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         addWord = new javax.swing.JButton();
         wordType = new javax.swing.JComboBox();
         addBack = new javax.swing.JButton();
@@ -992,32 +998,6 @@ public class Instructor extends javax.swing.JFrame
         addVocab.setBackground(new java.awt.Color(0, 153, 0));
 
         addingGrounds.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout addAdjectiveLayout = new javax.swing.GroupLayout(addAdjective);
-        addAdjective.setLayout(addAdjectiveLayout);
-        addAdjectiveLayout.setHorizontalGroup(
-            addAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        addAdjectiveLayout.setVerticalGroup(
-            addAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        addingGrounds.add(addAdjective, "card4");
-
-        javax.swing.GroupLayout addConjunctionLayout = new javax.swing.GroupLayout(addConjunction);
-        addConjunction.setLayout(addConjunctionLayout);
-        addConjunctionLayout.setHorizontalGroup(
-            addConjunctionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        addConjunctionLayout.setVerticalGroup(
-            addConjunctionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        addingGrounds.add(addConjunction, "card5");
 
         addPreposition.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
 
@@ -2324,7 +2304,7 @@ public class Instructor extends javax.swing.JFrame
         );
         verbChooseSubjectsLayout.setVerticalGroup(
             verbChooseSubjectsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(verbSubjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+            .addComponent(verbSubjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
         );
 
         addVerb.addTab("Subjects", verbChooseSubjects);
@@ -2348,7 +2328,7 @@ public class Instructor extends javax.swing.JFrame
         );
         verbChooseObjectsLayout.setVerticalGroup(
             verbChooseObjectsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(verbObjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+            .addComponent(verbObjectScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
         );
 
         addVerb.addTab("Objects", verbChooseObjects);
@@ -2372,7 +2352,7 @@ public class Instructor extends javax.swing.JFrame
         );
         verbChoosePrepositionsLayout.setVerticalGroup(
             verbChoosePrepositionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(verbPrepositionScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+            .addComponent(verbPrepositionScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
         );
 
         addVerb.addTab("Prepositions", verbChoosePrepositions);
@@ -2396,7 +2376,7 @@ public class Instructor extends javax.swing.JFrame
         );
         verbChooseAdverbsLayout.setVerticalGroup(
             verbChooseAdverbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(verbAdverbScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+            .addComponent(verbAdverbScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
         );
 
         addVerb.addTab("Adverbs", verbChooseAdverbs);
@@ -2808,6 +2788,71 @@ public class Instructor extends javax.swing.JFrame
         addNoun.addTab(" Adjectives ", nounAdjectivePanel);
 
         addingGrounds.add(addNoun, "Noun");
+
+        addAdjective.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout adjectiveAddAdjectiveLayout = new javax.swing.GroupLayout(adjectiveAddAdjective);
+        adjectiveAddAdjective.setLayout(adjectiveAddAdjectiveLayout);
+        adjectiveAddAdjectiveLayout.setHorizontalGroup(
+            adjectiveAddAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 851, Short.MAX_VALUE)
+        );
+        adjectiveAddAdjectiveLayout.setVerticalGroup(
+            adjectiveAddAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 376, Short.MAX_VALUE)
+        );
+
+        addAdjective.addTab(" Adjective ", adjectiveAddAdjective);
+
+        jList2.setBackground(new java.awt.Color(240, 190, 0));
+        jList2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jList2.setForeground(new java.awt.Color(0, 153, 0));
+        jList2.setModel(new javax.swing.AbstractListModel()
+        {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList2);
+
+        javax.swing.GroupLayout adjectiveNounsLayout = new javax.swing.GroupLayout(adjectiveNouns);
+        adjectiveNouns.setLayout(adjectiveNounsLayout);
+        adjectiveNounsLayout.setHorizontalGroup(
+            adjectiveNounsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        );
+        adjectiveNounsLayout.setVerticalGroup(
+            adjectiveNounsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+        );
+
+        addAdjective.addTab(" Nouns ", adjectiveNouns);
+
+        jList1.setBackground(new java.awt.Color(240, 190, 0));
+        jList1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jList1.setForeground(new java.awt.Color(0, 153, 0));
+        jList1.setModel(new javax.swing.AbstractListModel()
+        {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        javax.swing.GroupLayout adverbVerbsLayout = new javax.swing.GroupLayout(adverbVerbs);
+        adverbVerbs.setLayout(adverbVerbsLayout);
+        adverbVerbsLayout.setHorizontalGroup(
+            adverbVerbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        );
+        adverbVerbsLayout.setVerticalGroup(
+            adverbVerbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+        );
+
+        addAdjective.addTab(" Verbs ", adverbVerbs);
+
+        addingGrounds.add(addAdjective, "Adjective");
 
         addWord.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         addWord.setText("Add Word");
@@ -3580,9 +3625,8 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JTextArea aText;
     private javax.swing.JScrollPane aTitleScroll;
     private javax.swing.JButton aVerbs;
-    private javax.swing.JPanel addAdjective;
+    private javax.swing.JTabbedPane addAdjective;
     private javax.swing.JButton addBack;
-    private javax.swing.JPanel addConjunction;
     private javax.swing.JTabbedPane addNoun;
     private javax.swing.JTabbedPane addPreposition;
     private javax.swing.JTabbedPane addVerb;
@@ -3590,6 +3634,9 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JButton addVocabButton;
     private javax.swing.JButton addWord;
     private javax.swing.JPanel addingGrounds;
+    private javax.swing.JPanel adjectiveAddAdjective;
+    private javax.swing.JPanel adjectiveNouns;
+    private javax.swing.JPanel adverbVerbs;
     private javax.swing.JButton bActiveParticiples;
     private javax.swing.JButton bAoristVerbs;
     private javax.swing.JButton bBack;
@@ -3643,6 +3690,10 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JTextArea incorrect;
     private javax.swing.JScrollPane incorrectScroll;
     private javax.swing.JTextField input;
+    private javax.swing.JList jList1;
+    private javax.swing.JList jList2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel nounActionPanel;
     private javax.swing.JScrollPane nounActionScroll;
     public javax.swing.JList nounActions;
