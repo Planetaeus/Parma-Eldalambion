@@ -103,11 +103,38 @@ public class Instructor extends javax.swing.JFrame
         addVocab = new javax.swing.JPanel();
         addingGrounds = new javax.swing.JPanel();
         addPreposition = new javax.swing.JTabbedPane();
-        prepAddPrep = new javax.swing.JPanel();
+        try
+        {
+            prepAddPrep =(javax.swing.JPanel)java.beans.Beans.instantiate(getClass().getClassLoader(), "gui.Instructor_prepAddPrep");
+        } catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        } catch (java.io.IOException e)
+        {
+            e.printStackTrace();
+        }
         prepSeparator = new javax.swing.JSeparator();
         prepPluralPanel = new javax.swing.JPanel();
-        prepPluralTitle = new javax.swing.JTextArea();
-        prepPluralBox = new javax.swing.JTextField();
+        try
+        {
+            prepPluralTitle =(javax.swing.JTextArea)java.beans.Beans.instantiate(getClass().getClassLoader(), "gui.Instructor_prepPluralTitle");
+        } catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        } catch (java.io.IOException e)
+        {
+            e.printStackTrace();
+        }
+        try
+        {
+            prepPluralBox =(javax.swing.JTextField)java.beans.Beans.instantiate(getClass().getClassLoader(), "gui.Instructor_prepPluralBox");
+        } catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        } catch (java.io.IOException e)
+        {
+            e.printStackTrace();
+        }
         prepDualPanel = new javax.swing.JPanel();
         prepDualTitle = new javax.swing.JTextArea();
         prepDualBox = new javax.swing.JTextField();
@@ -221,6 +248,21 @@ public class Instructor extends javax.swing.JFrame
         nounAdjectives = new javax.swing.JList();
         addAdjective = new javax.swing.JTabbedPane();
         adjectiveAddAdjective = new javax.swing.JPanel();
+        adjectiveQSingPanel = new javax.swing.JPanel();
+        adjectiveQSingTitle = new javax.swing.JTextArea();
+        adjectiveQSingBox = new javax.swing.JTextField();
+        adjectiveESingPanel = new javax.swing.JPanel();
+        adjectiveESingTitle = new javax.swing.JTextArea();
+        adjectiveESingBox = new javax.swing.JTextField();
+        adjectiveEAdverbPanel = new javax.swing.JPanel();
+        adjectiveEAdverbTitle = new javax.swing.JTextArea();
+        adjectiveEAdverbBox = new javax.swing.JTextField();
+        adjectiveQAdverbPanel = new javax.swing.JPanel();
+        adjectiveQAdverbTitle = new javax.swing.JTextArea();
+        adjectiveQAdverbBox = new javax.swing.JTextField();
+        adjectiveQPluralPanel = new javax.swing.JPanel();
+        adjectiveQPluralTitle = new javax.swing.JTextArea();
+        adjectiveQPluralBox = new javax.swing.JTextField();
         adjectiveNouns = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList();
@@ -1001,35 +1043,11 @@ public class Instructor extends javax.swing.JFrame
 
         addPreposition.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
 
-        prepAddPrep.setBackground(new java.awt.Color(0, 153, 0));
-
         prepSeparator.setBackground(new java.awt.Color(0, 153, 0));
         prepSeparator.setForeground(new java.awt.Color(0, 153, 0));
 
         prepPluralPanel.setBackground(new java.awt.Color(240, 190, 0));
         prepPluralPanel.setPreferredSize(new java.awt.Dimension(400, 165));
-
-        prepPluralTitle.setEditable(false);
-        prepPluralTitle.setBackground(new java.awt.Color(240, 190, 0));
-        prepPluralTitle.setColumns(20);
-        prepPluralTitle.setFont(new java.awt.Font("Tahoma", 1, 45)); // NOI18N
-        prepPluralTitle.setForeground(new java.awt.Color(0, 153, 0));
-        prepPluralTitle.setRows(5);
-        prepPluralTitle.setText("Quenya Plural");
-        prepPluralTitle.setBorder(null);
-
-        prepPluralBox.setBackground(new java.awt.Color(240, 190, 0));
-        prepPluralBox.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        prepPluralBox.setForeground(new java.awt.Color(0, 153, 0));
-        prepPluralBox.setText("Type here...");
-        prepPluralBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        prepPluralBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                prepPluralBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout prepPluralPanelLayout = new javax.swing.GroupLayout(prepPluralPanel);
         prepPluralPanel.setLayout(prepPluralPanelLayout);
@@ -1064,20 +1082,12 @@ public class Instructor extends javax.swing.JFrame
         prepDualTitle.setForeground(new java.awt.Color(0, 153, 0));
         prepDualTitle.setRows(5);
         prepDualTitle.setText("Quenya Dual");
-        prepDualTitle.setBorder(null);
 
         prepDualBox.setBackground(new java.awt.Color(240, 190, 0));
         prepDualBox.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         prepDualBox.setForeground(new java.awt.Color(0, 153, 0));
         prepDualBox.setText("Type here...");
         prepDualBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        prepDualBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                prepDualBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout prepDualPanelLayout = new javax.swing.GroupLayout(prepDualPanel);
         prepDualPanel.setLayout(prepDualPanelLayout);
@@ -1112,20 +1122,12 @@ public class Instructor extends javax.swing.JFrame
         prepSingTitle.setForeground(new java.awt.Color(0, 153, 0));
         prepSingTitle.setRows(5);
         prepSingTitle.setText("Quenya Singular");
-        prepSingTitle.setBorder(null);
 
         prepSingBox.setBackground(new java.awt.Color(240, 190, 0));
         prepSingBox.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         prepSingBox.setForeground(new java.awt.Color(0, 153, 0));
         prepSingBox.setText("Type here...");
         prepSingBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        prepSingBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                prepSingBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout prepSingPanelLayout = new javax.swing.GroupLayout(prepSingPanel);
         prepSingPanel.setLayout(prepSingPanelLayout);
@@ -1160,20 +1162,12 @@ public class Instructor extends javax.swing.JFrame
         prepEnglishTitle.setForeground(new java.awt.Color(0, 153, 0));
         prepEnglishTitle.setRows(5);
         prepEnglishTitle.setText("English");
-        prepEnglishTitle.setBorder(null);
 
         prepEnglishBox.setBackground(new java.awt.Color(240, 190, 0));
         prepEnglishBox.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         prepEnglishBox.setForeground(new java.awt.Color(0, 153, 0));
         prepEnglishBox.setText("Type here...");
         prepEnglishBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        prepEnglishBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                prepEnglishBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout prepEnglishPanelLayout = new javax.swing.GroupLayout(prepEnglishPanel);
         prepEnglishPanel.setLayout(prepEnglishPanelLayout);
@@ -1278,26 +1272,12 @@ public class Instructor extends javax.swing.JFrame
         eInfinitiveTitle.setText("Infinitive");
         eInfinitiveTitle.setBorder(null);
         eInfinitiveTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        eInfinitiveTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eInfinitiveTitleActionPerformed(evt);
-            }
-        });
 
         eInfinitiveBox.setBackground(new java.awt.Color(240, 190, 0));
         eInfinitiveBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eInfinitiveBox.setForeground(new java.awt.Color(0, 153, 0));
         eInfinitiveBox.setText("Type here...");
         eInfinitiveBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        eInfinitiveBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eInfinitiveBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout eInfinitivePanelLayout = new javax.swing.GroupLayout(eInfinitivePanel);
         eInfinitivePanel.setLayout(eInfinitivePanelLayout);
@@ -1330,26 +1310,12 @@ public class Instructor extends javax.swing.JFrame
         ePastTitle.setText("Past Tense");
         ePastTitle.setBorder(null);
         ePastTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        ePastTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ePastTitleActionPerformed(evt);
-            }
-        });
 
         ePastBox.setBackground(new java.awt.Color(240, 190, 0));
         ePastBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ePastBox.setForeground(new java.awt.Color(0, 153, 0));
         ePastBox.setText("Type here...");
         ePastBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        ePastBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ePastBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout ePastPanelLayout = new javax.swing.GroupLayout(ePastPanel);
         ePastPanel.setLayout(ePastPanelLayout);
@@ -1382,26 +1348,12 @@ public class Instructor extends javax.swing.JFrame
         ePerfectTitle.setText("Perfect Tense");
         ePerfectTitle.setBorder(null);
         ePerfectTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        ePerfectTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ePerfectTitleActionPerformed(evt);
-            }
-        });
 
         ePerfectBox.setBackground(new java.awt.Color(240, 190, 0));
         ePerfectBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ePerfectBox.setForeground(new java.awt.Color(0, 153, 0));
         ePerfectBox.setText("Type here...");
         ePerfectBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        ePerfectBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ePerfectBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout ePerfectPanelLayout = new javax.swing.GroupLayout(ePerfectPanel);
         ePerfectPanel.setLayout(ePerfectPanelLayout);
@@ -1434,26 +1386,12 @@ public class Instructor extends javax.swing.JFrame
         eAoristTitle.setText("Aorist");
         eAoristTitle.setBorder(null);
         eAoristTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        eAoristTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eAoristTitleActionPerformed(evt);
-            }
-        });
 
         eAoristBox.setBackground(new java.awt.Color(240, 190, 0));
         eAoristBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eAoristBox.setForeground(new java.awt.Color(0, 153, 0));
         eAoristBox.setText("Type here...");
         eAoristBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        eAoristBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eAoristBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout eAoristPanelLayout = new javax.swing.GroupLayout(eAoristPanel);
         eAoristPanel.setLayout(eAoristPanelLayout);
@@ -1486,26 +1424,12 @@ public class Instructor extends javax.swing.JFrame
         eAoristAltTitle.setText("Alternative Aorist");
         eAoristAltTitle.setBorder(null);
         eAoristAltTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        eAoristAltTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eAoristAltTitleActionPerformed(evt);
-            }
-        });
 
         eAoristAltBox.setBackground(new java.awt.Color(240, 190, 0));
         eAoristAltBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eAoristAltBox.setForeground(new java.awt.Color(0, 153, 0));
         eAoristAltBox.setText("Type here...");
         eAoristAltBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        eAoristAltBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eAoristAltBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout eAoristAltPanelLayout = new javax.swing.GroupLayout(eAoristAltPanel);
         eAoristAltPanel.setLayout(eAoristAltPanelLayout);
@@ -1538,26 +1462,12 @@ public class Instructor extends javax.swing.JFrame
         eActiveTitle.setText("Active Participle");
         eActiveTitle.setBorder(null);
         eActiveTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        eActiveTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eActiveTitleActionPerformed(evt);
-            }
-        });
 
         eActiveBox.setBackground(new java.awt.Color(240, 190, 0));
         eActiveBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eActiveBox.setForeground(new java.awt.Color(0, 153, 0));
         eActiveBox.setText("Type here...");
         eActiveBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        eActiveBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eActiveBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout eActivePanelLayout = new javax.swing.GroupLayout(eActivePanel);
         eActivePanel.setLayout(eActivePanelLayout);
@@ -1590,26 +1500,12 @@ public class Instructor extends javax.swing.JFrame
         ePassiveTitle.setText("Passive Participle");
         ePassiveTitle.setBorder(null);
         ePassiveTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        ePassiveTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ePassiveTitleActionPerformed(evt);
-            }
-        });
 
         ePassiveBox.setBackground(new java.awt.Color(240, 190, 0));
         ePassiveBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         ePassiveBox.setForeground(new java.awt.Color(0, 153, 0));
         ePassiveBox.setText("Type here...");
         ePassiveBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        ePassiveBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ePassiveBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout ePassivePanelLayout = new javax.swing.GroupLayout(ePassivePanel);
         ePassivePanel.setLayout(ePassivePanelLayout);
@@ -1642,26 +1538,12 @@ public class Instructor extends javax.swing.JFrame
         eVerbalTitle.setText("Verbal Noun");
         eVerbalTitle.setBorder(null);
         eVerbalTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        eVerbalTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eVerbalTitleActionPerformed(evt);
-            }
-        });
 
         eVerbalBox.setBackground(new java.awt.Color(240, 190, 0));
         eVerbalBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eVerbalBox.setForeground(new java.awt.Color(0, 153, 0));
         eVerbalBox.setText("Type here...");
         eVerbalBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        eVerbalBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                eVerbalBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout eVerbalPanelLayout = new javax.swing.GroupLayout(eVerbalPanel);
         eVerbalPanel.setLayout(eVerbalPanelLayout);
@@ -1737,26 +1619,12 @@ public class Instructor extends javax.swing.JFrame
         qStemTitle.setText("Stem");
         qStemTitle.setBorder(null);
         qStemTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qStemTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qStemTitleActionPerformed(evt);
-            }
-        });
 
         qStemBox.setBackground(new java.awt.Color(240, 190, 0));
         qStemBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qStemBox.setForeground(new java.awt.Color(0, 153, 0));
         qStemBox.setText("Type here...");
         qStemBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qStemBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qStemBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qStemPanelLayout = new javax.swing.GroupLayout(qStemPanel);
         qStemPanel.setLayout(qStemPanelLayout);
@@ -1788,26 +1656,12 @@ public class Instructor extends javax.swing.JFrame
         qPastTitle.setText("Past Tense");
         qPastTitle.setBorder(null);
         qPastTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qPastTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qPastTitleActionPerformed(evt);
-            }
-        });
 
         qPastBox.setBackground(new java.awt.Color(240, 190, 0));
         qPastBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qPastBox.setForeground(new java.awt.Color(0, 153, 0));
         qPastBox.setText("Type here...");
         qPastBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qPastBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qPastBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qPastPanelLayout = new javax.swing.GroupLayout(qPastPanel);
         qPastPanel.setLayout(qPastPanelLayout);
@@ -1839,26 +1693,12 @@ public class Instructor extends javax.swing.JFrame
         qFutureTitle.setText("Future Tense");
         qFutureTitle.setBorder(null);
         qFutureTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qFutureTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qFutureTitleActionPerformed(evt);
-            }
-        });
 
         qFutureBox.setBackground(new java.awt.Color(240, 190, 0));
         qFutureBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qFutureBox.setForeground(new java.awt.Color(0, 153, 0));
         qFutureBox.setText("Type here...");
         qFutureBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qFutureBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qFutureBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qFuturePanelLayout = new javax.swing.GroupLayout(qFuturePanel);
         qFuturePanel.setLayout(qFuturePanelLayout);
@@ -1890,26 +1730,12 @@ public class Instructor extends javax.swing.JFrame
         qPerfectTitle.setText("Perfect Tense");
         qPerfectTitle.setBorder(null);
         qPerfectTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qPerfectTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qPerfectTitleActionPerformed(evt);
-            }
-        });
 
         qPerfectBox.setBackground(new java.awt.Color(240, 190, 0));
         qPerfectBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qPerfectBox.setForeground(new java.awt.Color(0, 153, 0));
         qPerfectBox.setText("Type here...");
         qPerfectBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qPerfectBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qPerfectBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qPerfectPanelLayout = new javax.swing.GroupLayout(qPerfectPanel);
         qPerfectPanel.setLayout(qPerfectPanelLayout);
@@ -1941,26 +1767,12 @@ public class Instructor extends javax.swing.JFrame
         qPresentTitle.setText("Present Tense");
         qPresentTitle.setBorder(null);
         qPresentTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qPresentTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qPresentTitleActionPerformed(evt);
-            }
-        });
 
         qPresentBox.setBackground(new java.awt.Color(240, 190, 0));
         qPresentBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qPresentBox.setForeground(new java.awt.Color(0, 153, 0));
         qPresentBox.setText("Type here...");
         qPresentBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qPresentBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qPresentBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qPresentPanelLayout = new javax.swing.GroupLayout(qPresentPanel);
         qPresentPanel.setLayout(qPresentPanelLayout);
@@ -1992,26 +1804,12 @@ public class Instructor extends javax.swing.JFrame
         qAoristTitle.setText("Aorist");
         qAoristTitle.setBorder(null);
         qAoristTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qAoristTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qAoristTitleActionPerformed(evt);
-            }
-        });
 
         qAoristBox.setBackground(new java.awt.Color(240, 190, 0));
         qAoristBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qAoristBox.setForeground(new java.awt.Color(0, 153, 0));
         qAoristBox.setText("Type here...");
         qAoristBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qAoristBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qAoristBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qAoristPanelLayout = new javax.swing.GroupLayout(qAoristPanel);
         qAoristPanel.setLayout(qAoristPanelLayout);
@@ -2043,26 +1841,12 @@ public class Instructor extends javax.swing.JFrame
         qInfinitiveTitle.setText("Infinitive");
         qInfinitiveTitle.setBorder(null);
         qInfinitiveTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qInfinitiveTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qInfinitiveTitleActionPerformed(evt);
-            }
-        });
 
         qInfinitiveBox.setBackground(new java.awt.Color(240, 190, 0));
         qInfinitiveBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qInfinitiveBox.setForeground(new java.awt.Color(0, 153, 0));
         qInfinitiveBox.setText("Type here...");
         qInfinitiveBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qInfinitiveBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qInfinitiveBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qInfinitivePanelLayout = new javax.swing.GroupLayout(qInfinitivePanel);
         qInfinitivePanel.setLayout(qInfinitivePanelLayout);
@@ -2094,26 +1878,12 @@ public class Instructor extends javax.swing.JFrame
         qActiveTitle.setText("Active Participle");
         qActiveTitle.setBorder(null);
         qActiveTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qActiveTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qActiveTitleActionPerformed(evt);
-            }
-        });
 
         qActiveBox.setBackground(new java.awt.Color(240, 190, 0));
         qActiveBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qActiveBox.setForeground(new java.awt.Color(0, 153, 0));
         qActiveBox.setText("Type here...");
         qActiveBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qActiveBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qActiveBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qActivePanelLayout = new javax.swing.GroupLayout(qActivePanel);
         qActivePanel.setLayout(qActivePanelLayout);
@@ -2145,26 +1915,12 @@ public class Instructor extends javax.swing.JFrame
         qPassiveTitle.setText("Passive Participle");
         qPassiveTitle.setBorder(null);
         qPassiveTitle.setPreferredSize(new java.awt.Dimension(209, 50));
-        qPassiveTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qPassiveTitleActionPerformed(evt);
-            }
-        });
 
         qPassiveBox.setBackground(new java.awt.Color(240, 190, 0));
         qPassiveBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qPassiveBox.setForeground(new java.awt.Color(0, 153, 0));
         qPassiveBox.setText("Type here...");
         qPassiveBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qPassiveBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qPassiveBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qPassivePanelLayout = new javax.swing.GroupLayout(qPassivePanel);
         qPassivePanel.setLayout(qPassivePanelLayout);
@@ -2197,26 +1953,12 @@ public class Instructor extends javax.swing.JFrame
         qVerbalTitle.setText("Verbal Noun");
         qVerbalTitle.setBorder(null);
         qVerbalTitle.setPreferredSize(new java.awt.Dimension(209, 65));
-        qVerbalTitle.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qVerbalTitleActionPerformed(evt);
-            }
-        });
 
         qVerbalBox.setBackground(new java.awt.Color(240, 190, 0));
         qVerbalBox.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         qVerbalBox.setForeground(new java.awt.Color(0, 153, 0));
         qVerbalBox.setText("Type here...");
         qVerbalBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        qVerbalBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                qVerbalBoxActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout qVerbalPanelLayout = new javax.swing.GroupLayout(qVerbalPanel);
         qVerbalPanel.setLayout(qVerbalPanelLayout);
@@ -2396,13 +2138,6 @@ public class Instructor extends javax.swing.JFrame
         nounESingBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nounESingBox.setText("Type here...");
         nounESingBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        nounESingBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                nounESingBoxActionPerformed(evt);
-            }
-        });
 
         nounESingTitle.setEditable(false);
         nounESingTitle.setBackground(new java.awt.Color(240, 190, 0));
@@ -2443,13 +2178,6 @@ public class Instructor extends javax.swing.JFrame
         nounQStemBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nounQStemBox.setText("Type here...");
         nounQStemBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        nounQStemBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                nounQStemBoxActionPerformed(evt);
-            }
-        });
 
         nounQStemTitle.setEditable(false);
         nounQStemTitle.setBackground(new java.awt.Color(240, 190, 0));
@@ -2490,13 +2218,6 @@ public class Instructor extends javax.swing.JFrame
         nounQDualBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nounQDualBox.setText("Type here...");
         nounQDualBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        nounQDualBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                nounQDualBoxActionPerformed(evt);
-            }
-        });
 
         nounQDualTitle.setEditable(false);
         nounQDualTitle.setBackground(new java.awt.Color(240, 190, 0));
@@ -2537,13 +2258,6 @@ public class Instructor extends javax.swing.JFrame
         nounQPluralBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nounQPluralBox.setText("Type here...");
         nounQPluralBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        nounQPluralBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                nounQPluralBoxActionPerformed(evt);
-            }
-        });
 
         nounQPluralTitle.setEditable(false);
         nounQPluralTitle.setBackground(new java.awt.Color(240, 190, 0));
@@ -2583,13 +2297,6 @@ public class Instructor extends javax.swing.JFrame
         nounEPluralBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nounEPluralBox.setText("Type here...");
         nounEPluralBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        nounEPluralBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                nounEPluralBoxActionPerformed(evt);
-            }
-        });
 
         nounEPluralTitle.setEditable(false);
         nounEPluralTitle.setBackground(new java.awt.Color(240, 190, 0));
@@ -2630,13 +2337,6 @@ public class Instructor extends javax.swing.JFrame
         nounQSingBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nounQSingBox.setText("Type here...");
         nounQSingBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        nounQSingBox.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                nounQSingBoxActionPerformed(evt);
-            }
-        });
 
         nounQSingTitle.setEditable(false);
         nounQSingTitle.setBackground(new java.awt.Color(240, 190, 0));
@@ -2791,15 +2491,228 @@ public class Instructor extends javax.swing.JFrame
 
         addAdjective.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
 
+        adjectiveAddAdjective.setBackground(new java.awt.Color(0, 153, 0));
+
+        adjectiveQSingPanel.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQSingPanel.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveQSingPanel.setPreferredSize(new java.awt.Dimension(412, 114));
+
+        adjectiveQSingTitle.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQSingTitle.setColumns(20);
+        adjectiveQSingTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        adjectiveQSingTitle.setRows(5);
+        adjectiveQSingTitle.setText("Quenya\nSingular");
+
+        adjectiveQSingBox.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQSingBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        adjectiveQSingBox.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveQSingBox.setText("Type here...");
+        adjectiveQSingBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+
+        javax.swing.GroupLayout adjectiveQSingPanelLayout = new javax.swing.GroupLayout(adjectiveQSingPanel);
+        adjectiveQSingPanel.setLayout(adjectiveQSingPanelLayout);
+        adjectiveQSingPanelLayout.setHorizontalGroup(
+            adjectiveQSingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adjectiveQSingPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adjectiveQSingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adjectiveQSingBox, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        adjectiveQSingPanelLayout.setVerticalGroup(
+            adjectiveQSingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adjectiveQSingPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(adjectiveQSingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(adjectiveQSingBox, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(adjectiveQSingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        adjectiveESingPanel.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveESingPanel.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveESingPanel.setPreferredSize(new java.awt.Dimension(412, 114));
+
+        adjectiveESingTitle.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveESingTitle.setColumns(20);
+        adjectiveESingTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        adjectiveESingTitle.setRows(5);
+        adjectiveESingTitle.setText("English\nSingular");
+
+        adjectiveESingBox.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveESingBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        adjectiveESingBox.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveESingBox.setText("Type here...");
+        adjectiveESingBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+
+        javax.swing.GroupLayout adjectiveESingPanelLayout = new javax.swing.GroupLayout(adjectiveESingPanel);
+        adjectiveESingPanel.setLayout(adjectiveESingPanelLayout);
+        adjectiveESingPanelLayout.setHorizontalGroup(
+            adjectiveESingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adjectiveESingPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adjectiveESingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adjectiveESingBox)
+                .addContainerGap())
+        );
+        adjectiveESingPanelLayout.setVerticalGroup(
+            adjectiveESingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adjectiveESingPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(adjectiveESingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(adjectiveESingBox, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(adjectiveESingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        adjectiveEAdverbPanel.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveEAdverbPanel.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveEAdverbPanel.setPreferredSize(new java.awt.Dimension(412, 114));
+
+        adjectiveEAdverbTitle.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveEAdverbTitle.setColumns(20);
+        adjectiveEAdverbTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        adjectiveEAdverbTitle.setRows(5);
+        adjectiveEAdverbTitle.setText("English\nAdverb");
+
+        adjectiveEAdverbBox.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveEAdverbBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        adjectiveEAdverbBox.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveEAdverbBox.setText("Type here...");
+        adjectiveEAdverbBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+
+        javax.swing.GroupLayout adjectiveEAdverbPanelLayout = new javax.swing.GroupLayout(adjectiveEAdverbPanel);
+        adjectiveEAdverbPanel.setLayout(adjectiveEAdverbPanelLayout);
+        adjectiveEAdverbPanelLayout.setHorizontalGroup(
+            adjectiveEAdverbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adjectiveEAdverbPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adjectiveEAdverbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adjectiveEAdverbBox, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        adjectiveEAdverbPanelLayout.setVerticalGroup(
+            adjectiveEAdverbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adjectiveEAdverbPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(adjectiveEAdverbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(adjectiveEAdverbBox, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(adjectiveEAdverbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        adjectiveQAdverbPanel.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQAdverbPanel.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveQAdverbPanel.setPreferredSize(new java.awt.Dimension(412, 114));
+
+        adjectiveQAdverbTitle.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQAdverbTitle.setColumns(20);
+        adjectiveQAdverbTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        adjectiveQAdverbTitle.setRows(5);
+        adjectiveQAdverbTitle.setText("Quenya\nAdverb");
+
+        adjectiveQAdverbBox.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQAdverbBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        adjectiveQAdverbBox.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveQAdverbBox.setText("Type here...");
+        adjectiveQAdverbBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+
+        javax.swing.GroupLayout adjectiveQAdverbPanelLayout = new javax.swing.GroupLayout(adjectiveQAdverbPanel);
+        adjectiveQAdverbPanel.setLayout(adjectiveQAdverbPanelLayout);
+        adjectiveQAdverbPanelLayout.setHorizontalGroup(
+            adjectiveQAdverbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adjectiveQAdverbPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adjectiveQAdverbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adjectiveQAdverbBox)
+                .addContainerGap())
+        );
+        adjectiveQAdverbPanelLayout.setVerticalGroup(
+            adjectiveQAdverbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adjectiveQAdverbPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(adjectiveQAdverbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(adjectiveQAdverbBox, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(adjectiveQAdverbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        adjectiveQPluralPanel.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQPluralPanel.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveQPluralPanel.setPreferredSize(new java.awt.Dimension(413, 114));
+
+        adjectiveQPluralTitle.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQPluralTitle.setColumns(20);
+        adjectiveQPluralTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        adjectiveQPluralTitle.setRows(5);
+        adjectiveQPluralTitle.setText("Quenya\nPlural");
+
+        adjectiveQPluralBox.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveQPluralBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        adjectiveQPluralBox.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveQPluralBox.setText("Type here...");
+        adjectiveQPluralBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+
+        javax.swing.GroupLayout adjectiveQPluralPanelLayout = new javax.swing.GroupLayout(adjectiveQPluralPanel);
+        adjectiveQPluralPanel.setLayout(adjectiveQPluralPanelLayout);
+        adjectiveQPluralPanelLayout.setHorizontalGroup(
+            adjectiveQPluralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adjectiveQPluralPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adjectiveQPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adjectiveQPluralBox, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        adjectiveQPluralPanelLayout.setVerticalGroup(
+            adjectiveQPluralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adjectiveQPluralPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(adjectiveQPluralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(adjectiveQPluralBox, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(adjectiveQPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout adjectiveAddAdjectiveLayout = new javax.swing.GroupLayout(adjectiveAddAdjective);
         adjectiveAddAdjective.setLayout(adjectiveAddAdjectiveLayout);
         adjectiveAddAdjectiveLayout.setHorizontalGroup(
             adjectiveAddAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 851, Short.MAX_VALUE)
+            .addGroup(adjectiveAddAdjectiveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adjectiveAddAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(adjectiveQSingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adjectiveESingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(7, 7, 7)
+                .addGroup(adjectiveAddAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adjectiveAddAdjectiveLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(adjectiveEAdverbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(adjectiveQAdverbPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(adjectiveAddAdjectiveLayout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(adjectiveQPluralPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(219, Short.MAX_VALUE))
         );
         adjectiveAddAdjectiveLayout.setVerticalGroup(
             adjectiveAddAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 376, Short.MAX_VALUE)
+            .addGroup(adjectiveAddAdjectiveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adjectiveAddAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(adjectiveEAdverbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adjectiveESingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(adjectiveAddAdjectiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adjectiveQSingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adjectiveQAdverbPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adjectiveQPluralPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         addAdjective.addTab(" Adjective ", adjectiveAddAdjective);
@@ -3225,236 +3138,6 @@ public class Instructor extends javax.swing.JFrame
         showCard( "selection" );
     }//GEN-LAST:event_addBackActionPerformed
 
-    private void eInfinitiveTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eInfinitiveTitleActionPerformed
-    {//GEN-HEADEREND:event_eInfinitiveTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eInfinitiveTitleActionPerformed
-
-    private void eInfinitiveBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eInfinitiveBoxActionPerformed
-    {//GEN-HEADEREND:event_eInfinitiveBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eInfinitiveBoxActionPerformed
-
-    private void eAoristTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eAoristTitleActionPerformed
-    {//GEN-HEADEREND:event_eAoristTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eAoristTitleActionPerformed
-
-    private void eAoristBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eAoristBoxActionPerformed
-    {//GEN-HEADEREND:event_eAoristBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eAoristBoxActionPerformed
-
-    private void ePastTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ePastTitleActionPerformed
-    {//GEN-HEADEREND:event_ePastTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ePastTitleActionPerformed
-
-    private void ePastBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ePastBoxActionPerformed
-    {//GEN-HEADEREND:event_ePastBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ePastBoxActionPerformed
-
-    private void eAoristAltTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eAoristAltTitleActionPerformed
-    {//GEN-HEADEREND:event_eAoristAltTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eAoristAltTitleActionPerformed
-
-    private void eAoristAltBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eAoristAltBoxActionPerformed
-    {//GEN-HEADEREND:event_eAoristAltBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eAoristAltBoxActionPerformed
-
-    private void eActiveTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eActiveTitleActionPerformed
-    {//GEN-HEADEREND:event_eActiveTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eActiveTitleActionPerformed
-
-    private void eActiveBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eActiveBoxActionPerformed
-    {//GEN-HEADEREND:event_eActiveBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eActiveBoxActionPerformed
-
-    private void ePerfectTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ePerfectTitleActionPerformed
-    {//GEN-HEADEREND:event_ePerfectTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ePerfectTitleActionPerformed
-
-    private void ePerfectBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ePerfectBoxActionPerformed
-    {//GEN-HEADEREND:event_ePerfectBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ePerfectBoxActionPerformed
-
-    private void ePassiveTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ePassiveTitleActionPerformed
-    {//GEN-HEADEREND:event_ePassiveTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ePassiveTitleActionPerformed
-
-    private void ePassiveBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ePassiveBoxActionPerformed
-    {//GEN-HEADEREND:event_ePassiveBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ePassiveBoxActionPerformed
-
-    private void eVerbalTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eVerbalTitleActionPerformed
-    {//GEN-HEADEREND:event_eVerbalTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eVerbalTitleActionPerformed
-
-    private void eVerbalBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_eVerbalBoxActionPerformed
-    {//GEN-HEADEREND:event_eVerbalBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eVerbalBoxActionPerformed
-
-    private void qStemTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qStemTitleActionPerformed
-    {//GEN-HEADEREND:event_qStemTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qStemTitleActionPerformed
-
-    private void qStemBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qStemBoxActionPerformed
-    {//GEN-HEADEREND:event_qStemBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qStemBoxActionPerformed
-
-    private void qPastTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qPastTitleActionPerformed
-    {//GEN-HEADEREND:event_qPastTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qPastTitleActionPerformed
-
-    private void qPastBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qPastBoxActionPerformed
-    {//GEN-HEADEREND:event_qPastBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qPastBoxActionPerformed
-
-    private void qFutureTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qFutureTitleActionPerformed
-    {//GEN-HEADEREND:event_qFutureTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qFutureTitleActionPerformed
-
-    private void qFutureBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qFutureBoxActionPerformed
-    {//GEN-HEADEREND:event_qFutureBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qFutureBoxActionPerformed
-
-    private void qPerfectTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qPerfectTitleActionPerformed
-    {//GEN-HEADEREND:event_qPerfectTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qPerfectTitleActionPerformed
-
-    private void qPerfectBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qPerfectBoxActionPerformed
-    {//GEN-HEADEREND:event_qPerfectBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qPerfectBoxActionPerformed
-
-    private void qAoristTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qAoristTitleActionPerformed
-    {//GEN-HEADEREND:event_qAoristTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qAoristTitleActionPerformed
-
-    private void qAoristBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qAoristBoxActionPerformed
-    {//GEN-HEADEREND:event_qAoristBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qAoristBoxActionPerformed
-
-    private void qInfinitiveTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qInfinitiveTitleActionPerformed
-    {//GEN-HEADEREND:event_qInfinitiveTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qInfinitiveTitleActionPerformed
-
-    private void qInfinitiveBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qInfinitiveBoxActionPerformed
-    {//GEN-HEADEREND:event_qInfinitiveBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qInfinitiveBoxActionPerformed
-
-    private void qActiveTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qActiveTitleActionPerformed
-    {//GEN-HEADEREND:event_qActiveTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qActiveTitleActionPerformed
-
-    private void qActiveBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qActiveBoxActionPerformed
-    {//GEN-HEADEREND:event_qActiveBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qActiveBoxActionPerformed
-
-    private void qPassiveTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qPassiveTitleActionPerformed
-    {//GEN-HEADEREND:event_qPassiveTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qPassiveTitleActionPerformed
-
-    private void qPassiveBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qPassiveBoxActionPerformed
-    {//GEN-HEADEREND:event_qPassiveBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qPassiveBoxActionPerformed
-
-    private void qVerbalTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qVerbalTitleActionPerformed
-    {//GEN-HEADEREND:event_qVerbalTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qVerbalTitleActionPerformed
-
-    private void qVerbalBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qVerbalBoxActionPerformed
-    {//GEN-HEADEREND:event_qVerbalBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qVerbalBoxActionPerformed
-
-    private void qPresentTitleActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qPresentTitleActionPerformed
-    {//GEN-HEADEREND:event_qPresentTitleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qPresentTitleActionPerformed
-
-    private void qPresentBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_qPresentBoxActionPerformed
-    {//GEN-HEADEREND:event_qPresentBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qPresentBoxActionPerformed
-
-    private void prepPluralBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_prepPluralBoxActionPerformed
-    {//GEN-HEADEREND:event_prepPluralBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_prepPluralBoxActionPerformed
-
-    private void prepDualBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_prepDualBoxActionPerformed
-    {//GEN-HEADEREND:event_prepDualBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_prepDualBoxActionPerformed
-
-    private void prepSingBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_prepSingBoxActionPerformed
-    {//GEN-HEADEREND:event_prepSingBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_prepSingBoxActionPerformed
-
-    private void prepEnglishBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_prepEnglishBoxActionPerformed
-    {//GEN-HEADEREND:event_prepEnglishBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_prepEnglishBoxActionPerformed
-
-    private void nounQSingBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounQSingBoxActionPerformed
-    {//GEN-HEADEREND:event_nounQSingBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nounQSingBoxActionPerformed
-
-    private void nounEPluralBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounEPluralBoxActionPerformed
-    {//GEN-HEADEREND:event_nounEPluralBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nounEPluralBoxActionPerformed
-
-    private void nounQPluralBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounQPluralBoxActionPerformed
-    {//GEN-HEADEREND:event_nounQPluralBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nounQPluralBoxActionPerformed
-
-    private void nounQDualBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounQDualBoxActionPerformed
-    {//GEN-HEADEREND:event_nounQDualBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nounQDualBoxActionPerformed
-
-    private void nounQStemBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounQStemBoxActionPerformed
-    {//GEN-HEADEREND:event_nounQStemBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nounQStemBoxActionPerformed
-
-    private void nounESingBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_nounESingBoxActionPerformed
-    {//GEN-HEADEREND:event_nounESingBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nounESingBoxActionPerformed
-
     private void resetAdjective()
     {
 
@@ -3635,7 +3318,22 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JButton addWord;
     private javax.swing.JPanel addingGrounds;
     private javax.swing.JPanel adjectiveAddAdjective;
+    public javax.swing.JTextField adjectiveEAdverbBox;
+    private javax.swing.JPanel adjectiveEAdverbPanel;
+    private javax.swing.JTextArea adjectiveEAdverbTitle;
+    public javax.swing.JTextField adjectiveESingBox;
+    private javax.swing.JPanel adjectiveESingPanel;
+    private javax.swing.JTextArea adjectiveESingTitle;
     private javax.swing.JPanel adjectiveNouns;
+    public javax.swing.JTextField adjectiveQAdverbBox;
+    private javax.swing.JPanel adjectiveQAdverbPanel;
+    private javax.swing.JTextArea adjectiveQAdverbTitle;
+    public javax.swing.JTextField adjectiveQPluralBox;
+    private javax.swing.JPanel adjectiveQPluralPanel;
+    private javax.swing.JTextArea adjectiveQPluralTitle;
+    public javax.swing.JTextField adjectiveQSingBox;
+    private javax.swing.JPanel adjectiveQSingPanel;
+    private javax.swing.JTextArea adjectiveQSingTitle;
     private javax.swing.JPanel adverbVerbs;
     private javax.swing.JButton bActiveParticiples;
     private javax.swing.JButton bAoristVerbs;
@@ -3690,10 +3388,22 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JTextArea incorrect;
     private javax.swing.JScrollPane incorrectScroll;
     private javax.swing.JTextField input;
-    private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
+    public javax.swing.JList jList1;
+    public javax.swing.JList jList2;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JPanel nounActionPanel;
     private javax.swing.JScrollPane nounActionScroll;
     public javax.swing.JList nounActions;
