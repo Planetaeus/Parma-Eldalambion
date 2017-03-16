@@ -1,0 +1,73 @@
+/*
+ * CSS Styles that are used on the jScrollPane demo site - these are custom to the site and
+ * you shouldn't need to use them in your own implementations of jScrollPane.
+ */
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body
+{
+    background: rgb( 240, 190, 0 );
+}
+
+body
+{
+	font: 13px/1.231 arial,helvetica,clean,sans-serif;
+}
+
+#container
+{
+    width: 90%;
+    background: rgb( 0, 153, 0 );
+    padding: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    position: absolute;
+    border: 5px solid #000;
+    border-radius: 20%;
+    overflow: hidden;
+    top: 9%;
+    right: 4.5%;
+    bottom: 9%;
+    left: 4.5%;
+}
+
+#stuffs {
+    margin-top: 5%;
+    margin-bottom: 1%;
+    margin-left: 5%;
+}
+
+p
+{
+	font-size: 93%;
+	margin: 1em 0;
+}
+
+p.intro
+{
+	font-size: 116%;
+	padding: 10px;
+	background: #fff;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+
+}
+
+a
+{
+	color: #7171D4;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #f60;
+}
