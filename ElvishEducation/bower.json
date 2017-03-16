@@ -6,9 +6,11 @@
     ".jshintrc",
     "**/*.txt"
   ],
-  "dependencies": {"jqueryui":"1.12.1",
+  "dependencies": {
+    "jqueryui": "1.12.1",
     "jquery": "3.1.1",
-    "jquery-ui": "jqueryui#1.12.1"
+    "jquery-ui": "jqueryui#1.12.1",
+    "jScrollPane": "2.0.23"
   },
   "devDependencies": {}
 }

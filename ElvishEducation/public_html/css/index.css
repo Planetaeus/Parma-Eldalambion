@@ -8,6 +8,51 @@ and open the template in the editor.
     Author     : galin
 */
 
-* {
+body {
+    background: rgb( 240, 190, 0 );
+}
+
+div.banner {
     background: rgb( 0, 153, 0 );
+    width: 80%;
+    padding: 2% 5%;
+    top: 10%;
+    left: 4.5%;
+    bottom: 10%;
+    right: 5%;
+    position: absolute;
+    border: 5px solid #000;
+    border-radius: 20%;
+}
+
+#welcome {
+    text-align: center;
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 120px;
+    color: rgb( 240, 190, 0 );
+}
+
+div.button {
+    width: 60%;
+    height: 100px;
+    margin: 10% 20%;
+    background: rgb( 240, 190, 0 );
+    color: rgb( 0, 153, 0 );
+    border: 5px solid #000;
+    border-radius: 50%;
+}
+
+a.enter-button {
+    width: 53.25%;
+    height: 80px;
+    color: rgb( 0, 153, 0 );
+    display: block;
+    font-family: serif;
+    font-size: 48px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    padding-top: 1.5%;
+    border-radius: 50%;
 }
