@@ -31,12 +31,23 @@ public class TextManipulation
         String eSing = qi.adjectiveESingBox.getText(), eAdverb = qi.adjectiveEAdverbBox.getText(),
                qSing = qi.adjectiveQSingBox.getText(), qPlural = qi.adjectiveQPluralBox.getText(),
                qAdverb = qi.adjectiveQAdverbBox.getText();
-        
         String [] components = { eSing, eAdverb };
+        
+        for( String c: components )
+        {
+            if( c.equals( "Type here..." ) )
+                c = null;
+        }
         
         SQLAmbassador.addWord( Index.E_ADJECTIVES_TABLE, Index.E_ADJECTIVES_COLUMNS, components );
         
         components = new String [] { qSing, qPlural, qAdverb };
+        
+        for( String c: components )
+        {
+            if( c.equals( "Type here..." ) )
+                c = null;
+        }
         
         SQLAmbassador.addWord( Index.Q_ADJECTIVES_TABLE, Index.Q_ADJECTIVES_COLUMNS, components );
         
@@ -67,9 +78,21 @@ public class TextManipulation
         
         String [] components = { eSing, ePlural };
         
+        for( String c: components )
+        {
+            if( c.equals( "Type here..." ) )
+                c = null;
+        }
+        
         SQLAmbassador.addWord( Index.E_NOUNS_TABLE, Index.E_NOUNS_COLUMNS, components );
         
         components = new String [] { qStem, qSing, qDual, qPlural };
+        
+        for( String c: components )
+        {
+            if( c.equals( "Type here..." ) )
+                c = null;
+        }
         
         SQLAmbassador.addWord( Index.Q_NOUNS_TABLE, Index.Q_NOUNS_COLUMNS, components );
         
@@ -102,6 +125,12 @@ public class TextManipulation
         
         String [] components = { english, singular, dual, plural };
         
+        for( String c: components )
+        {
+            if( c.equals( "Type here..." ) )
+                c = null;
+        }
+        
         SQLAmbassador.addWord( Index.PREPOSITIONS_TABLE, Index.PREPOSITIONS_COLUMNS, components);
         
         //Subjects
@@ -128,6 +157,12 @@ public class TextManipulation
         
         String [] components = { eInfinitive, ePast, ePerfect, eAorist, eAorist3, eActive, ePassive };
         
+        for( String c: components )
+        {
+            if( c.equals( "Type here..." ) )
+                c = null;
+        }
+        
         SQLAmbassador.addWord( Index.E_VERBS_TABLE, Index.E_VERBS_COLUMNS, components );
         
         //Quenya
@@ -138,6 +173,12 @@ public class TextManipulation
                qPassive = qi.qPassiveBox.getText(), qVerbal = qi.qVerbalBox.getText();
         
         components = new String [] { qStem, qPast, qFuture, qPerfect, qPresent, qAorist, qInfinitive, qActive, qPassive, qVerbal };
+        
+        for( String c: components )
+        {
+            if( c.equals( "Type here..." ) )
+                c = "NULL";
+        }
         
         SQLAmbassador.addWord( Index.Q_VERBS_TABLE, Index.Q_VERBS_COLUMNS, components );
         
@@ -185,8 +226,6 @@ public class TextManipulation
             for( int i = 0; i < map.size(); i++ )
             {
                 model.add( i, map.get( i ) );
-                
-                System.out.println( i + " " + model.get( i ) );
             }
         }   
         else

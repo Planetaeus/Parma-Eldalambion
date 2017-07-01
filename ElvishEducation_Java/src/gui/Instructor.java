@@ -3222,7 +3222,7 @@ public class Instructor extends javax.swing.JFrame
 
     private void resetText(JTextField text)
     {
-        text.setText("Type");
+        text.setText("Type here...");
     }
 
     private void updateModels()
