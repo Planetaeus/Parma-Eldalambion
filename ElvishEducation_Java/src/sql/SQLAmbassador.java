@@ -10,9 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,62 +22,31 @@ import vocab.Word;
  */
 public class SQLAmbassador
 {
-    static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static final String DB_URL = "jdbc:sqlserver://localhost:40015;" +
+    private static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    private static final String DB_URL = "jdbc:sqlserver://localhost:40015;" +
                                 "databaseName=ParmaQuenion;";
     
-    static final String USER = "username";
-    static final String PASS = "pass";
+    private static final String USER = "username";
+    private static final String PASS = "pass";
     
     public static HashMap mapWords( String tableName, String columnName )
     {
-        Connection conn = null;
-        Statement stmt = null;
         String query = "SELECT id, " + columnName + " FROM " + tableName + " ORDER BY id ASC;";
         Map list = new HashMap();
         
-        try
+        Process block = (ResultSet rs) ->
         {
-            // TODO code application logic here
-            Class.forName(JDBC_DRIVER);
-            
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            
-            stmt = conn.createStatement();
-            try (ResultSet rs = stmt.executeQuery(query))
-            {
-                while(rs.next())
+            Map returnable = new HashMap();
+            while(rs.next())
                 {
                     int id = rs.getInt("id");
-                    String word = rs.getNString( columnName );
-                    list.put(id, word);
+                    String word = rs.getString( columnName );
+                    returnable.put(id, word);
                 }
-            }
-            stmt.close();
-            conn.close();
-        } catch (ClassNotFoundException | SQLException ex)
-        {
-            Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally
-        {
-            try
-            {
-                if(stmt != null)
-                    stmt.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try
-            {
-                if(conn != null)
-                    conn.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+            return returnable;
+        };
+        
+        list = (HashMap)query( query, block );
         
         return (HashMap)list;
     }
@@ -99,42 +66,7 @@ public class SQLAmbassador
         
         String query = "INSERT INTO " + table + "( " + columns + " ) VALUES ( "+ c.trim() + "' );";
         
-        
-        try
-        {
-            // TODO code application logic here
-            Class.forName(JDBC_DRIVER);
-            
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            
-            stmt = conn.createStatement();
-            stmt.execute(query);
-            
-            stmt.close();
-            conn.close();
-        } catch (ClassNotFoundException | SQLException ex)
-        {
-            Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally
-        {
-            try
-            {
-                if(stmt != null)
-                    stmt.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try
-            {
-                if(conn != null)
-                    conn.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        update( query );
     }
     
     public static void addAssociation( String table, String columns, int [] numbers )
@@ -149,159 +81,68 @@ public class SQLAmbassador
     
     public static Word getRandomWord( String table, String column )
     {
-        String word = "";
-        int index = 0;
-        Connection conn = null;
-        Statement stmt = null;
-        try
-        {
-            // TODO code application logic here
-            Class.forName(JDBC_DRIVER);
-            
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            
-            String addSQL = "SELECT COUNT(*) AS numbers FROM " + table + ";";
-            stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(addSQL);
-            rs.next();
-            index = rs.getInt("numbers");
-            index = (int)(Math.random()*index)+1;
-            
-            String sql = "SELECT " + column + " FROM " + table
-                        + " WHERE id = " + index + ";";
-            rs = stmt.executeQuery(sql);
-            while(rs.next())
-            {
-                word = rs.getString(column);
-            }
-            rs.close();
-            stmt.close();
-            conn.close();
-        } catch (ClassNotFoundException | SQLException ex)
-        {
-            Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally
-        {
-            try
-            {
-                if(stmt != null)
-                    stmt.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try
-            {
-                if(conn != null)
-                    conn.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        Word word = null;
         
-        return new Word( word, index );
+        String query = "SELECT TOP 1 " + column + " FROM " + table + "ORDER BY NEWID()";
+        
+        Process block = (ResultSet rs) ->
+        {
+            Word returnable = null;
+            while( rs.next() )
+            {
+                int index = rs.getInt( "id" );
+                String string = rs.getString(column);
+                returnable = new Word( string, index );
+            }
+            
+            return returnable;
+        };
+        
+        word = (Word)query( query, block );
+        
+        return word;
     }
     
     public static int findRandomOtherIndex( String table, String knownColumn, String desiredColumn, int id )
     {
-        List<Integer> list = new ArrayList<Integer>();
-        int index = 0;
+        int index = -1;
         
-        Connection conn = null;
-        Statement stmt = null;
-        try
+        String query = "SELECT TOP 1 " + desiredColumn + " FROM " + table
+                        + " WHERE " + knownColumn + " = " + id + " ORDER BY NEWID();";
+        
+        Process block = (ResultSet rs) ->
         {
-            // TODO code application logic here
-            Class.forName(JDBC_DRIVER);
-            
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            
-            String sql = "SELECT " + desiredColumn + " FROM " + table
-                        + " WHERE " + knownColumn + " = " + id + ";";
-            ResultSet rs = stmt.executeQuery(sql);
+            int returnable = -1;
             while(rs.next())
             {
-                list.add(rs.getInt(desiredColumn));
+                returnable = rs.getInt(desiredColumn);
             }
-            rs.close();
-            stmt.close();
-            conn.close();
-        } catch (ClassNotFoundException | SQLException ex)
-        {
-            Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally
-        {
-            try
-            {
-                if(stmt != null)
-                    stmt.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try
-            {
-                if(conn != null)
-                    conn.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+            return returnable;
+        };
         
-        index = (int)(Math.random()*list.size());
+        index = (int)query( query, block );
         
-        return list.get( index );
+        return index;
     }
     
     public static Word findWord( String table, String column, int id )
     {
         String word = "";
-        Connection conn = null;
-        Statement stmt = null;
-        try
-        {
-            // TODO code application logic here
-            Class.forName(JDBC_DRIVER);
-            
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            
-            String sql = "SELECT " + column + " FROM " + table
+        
+        String query = "SELECT " + column + " FROM " + table
                         + " WHERE id = " + id + ";";
-            ResultSet rs = stmt.executeQuery(sql);
+        
+        Process block = (ResultSet rs) ->
+        {
+            String returnable = "";
             while(rs.next())
             {
-                word = rs.getString(column);
+                returnable = rs.getString(column);
             }
-            rs.close();
-            stmt.close();
-            conn.close();
-        } catch (ClassNotFoundException | SQLException ex)
-        {
-            Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally
-        {
-            try
-            {
-                if(stmt != null)
-                    stmt.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try
-            {
-                if(conn != null)
-                    conn.close();
-            } catch (SQLException ex)
-            {
-                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+            return returnable;
+        };
+        
+        word = (String)query( query, block );
         
         return new Word( word, id );
     }
@@ -309,6 +150,28 @@ public class SQLAmbassador
     public static int findIndex( String table, String column, String word )
     {
         int index = -1;
+        String query = "SELECT id FROM " + table
+                        + " WHERE " + column + " LIKE '" + word + "';";
+        
+        Process block = (ResultSet rs) ->
+        {
+            int returnable = -1;
+            while (rs.next())
+            {
+                returnable = rs.getInt( "id" );
+            }
+            return returnable;
+        };
+        
+        index = (int)( query( query, block ) );
+        
+        return index;
+    }
+    
+    public static Object query( String query, Process block )
+    {
+        Object returned = null;
+        
         Connection conn = null;
         Statement stmt = null;
         try
@@ -319,14 +182,9 @@ public class SQLAmbassador
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
             
-            String sql = "SELECT id FROM " + table
-                        + " WHERE " + column + " LIKE '" + word + "';";
+            ResultSet rs = stmt.executeQuery( query );
             
-            ResultSet rs = stmt.executeQuery(sql);
-            while(rs.next())
-            {
-                index = rs.getInt( "id" );
-            }
+            returned = block.execute( rs );
             
             stmt.close();
             conn.close();
@@ -354,6 +212,53 @@ public class SQLAmbassador
             }
         }
         
-        return index;
+        return returned;
+    }
+    
+    public static void update( String query )
+    {
+        Connection conn = null;
+        Statement stmt = null;
+        
+        try
+        {
+            // TODO code application logic here
+            Class.forName(JDBC_DRIVER);
+            
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            
+            stmt = conn.createStatement();
+            stmt.executeUpdate( query );
+            
+            stmt.close();
+            conn.close();
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            try
+            {
+                if(stmt != null)
+                    stmt.close();
+            } catch (SQLException ex)
+            {
+                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try
+            {
+                if(conn != null)
+                    conn.close();
+            } catch (SQLException ex)
+            {
+                Logger.getLogger(SQLAmbassador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    private interface Process
+    {
+        Object execute( ResultSet rs ) throws SQLException;
     }
 }
