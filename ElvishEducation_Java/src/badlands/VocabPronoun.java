@@ -1,9 +1,10 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package badlands;
+/**package badlands;
 
 import gui.VocabFactory;
 import vocab.Vocab;
@@ -13,7 +14,7 @@ import vocab.VocabVerb;
  *
  * @author Michael
  */
-public class VocabPronoun extends Vocab
+/**public class VocabPronoun extends Vocab
 {   
     private final int [] verbs;
     private final int person;
@@ -74,3 +75,4 @@ public class VocabPronoun extends Vocab
         return (int)( Math.random() * verbs.length );
     }
 }
+*/

@@ -11,7 +11,6 @@ import javax.swing.JTextField;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-import practice.*;
 
 /**
  * The GUI for the Elvish Education project. Makes everything run.
@@ -263,12 +262,13 @@ public class Instructor extends javax.swing.JFrame
         adjectiveQPluralPanel = new javax.swing.JPanel();
         adjectiveQPluralTitle = new javax.swing.JTextArea();
         adjectiveQPluralBox = new javax.swing.JTextField();
-        adjectiveNouns = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
-        adverbVerbs = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        adjectiveNounPanel = new javax.swing.JPanel();
+        adjectiveNounScroll = new javax.swing.JScrollPane();
+        adjectiveNouns = new javax.swing.JList();
+        adverbVerbPanel = new javax.swing.JPanel();
+        adverbVerbScroll = new javax.swing.JScrollPane();
+        adverbVerbs = new javax.swing.JList();
+        blankPanel = new javax.swing.JPanel();
         addWord = new javax.swing.JButton();
         wordType = new javax.swing.JComboBox();
         addBack = new javax.swing.JButton();
@@ -2497,11 +2497,13 @@ public class Instructor extends javax.swing.JFrame
         adjectiveQSingPanel.setForeground(new java.awt.Color(0, 153, 0));
         adjectiveQSingPanel.setPreferredSize(new java.awt.Dimension(412, 114));
 
+        adjectiveQSingTitle.setEditable(false);
         adjectiveQSingTitle.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveQSingTitle.setColumns(20);
         adjectiveQSingTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         adjectiveQSingTitle.setRows(5);
         adjectiveQSingTitle.setText("Quenya\nSingular");
+        adjectiveQSingTitle.setBorder(null);
 
         adjectiveQSingBox.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveQSingBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -2534,11 +2536,13 @@ public class Instructor extends javax.swing.JFrame
         adjectiveESingPanel.setForeground(new java.awt.Color(0, 153, 0));
         adjectiveESingPanel.setPreferredSize(new java.awt.Dimension(412, 114));
 
+        adjectiveESingTitle.setEditable(false);
         adjectiveESingTitle.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveESingTitle.setColumns(20);
         adjectiveESingTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         adjectiveESingTitle.setRows(5);
         adjectiveESingTitle.setText("English\nSingular");
+        adjectiveESingTitle.setBorder(null);
 
         adjectiveESingBox.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveESingBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -2571,11 +2575,13 @@ public class Instructor extends javax.swing.JFrame
         adjectiveEAdverbPanel.setForeground(new java.awt.Color(0, 153, 0));
         adjectiveEAdverbPanel.setPreferredSize(new java.awt.Dimension(412, 114));
 
+        adjectiveEAdverbTitle.setEditable(false);
         adjectiveEAdverbTitle.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveEAdverbTitle.setColumns(20);
         adjectiveEAdverbTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         adjectiveEAdverbTitle.setRows(5);
         adjectiveEAdverbTitle.setText("English\nAdverb");
+        adjectiveEAdverbTitle.setBorder(null);
 
         adjectiveEAdverbBox.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveEAdverbBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -2608,11 +2614,13 @@ public class Instructor extends javax.swing.JFrame
         adjectiveQAdverbPanel.setForeground(new java.awt.Color(0, 153, 0));
         adjectiveQAdverbPanel.setPreferredSize(new java.awt.Dimension(412, 114));
 
+        adjectiveQAdverbTitle.setEditable(false);
         adjectiveQAdverbTitle.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveQAdverbTitle.setColumns(20);
         adjectiveQAdverbTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         adjectiveQAdverbTitle.setRows(5);
         adjectiveQAdverbTitle.setText("Quenya\nAdverb");
+        adjectiveQAdverbTitle.setBorder(null);
 
         adjectiveQAdverbBox.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveQAdverbBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -2645,11 +2653,13 @@ public class Instructor extends javax.swing.JFrame
         adjectiveQPluralPanel.setForeground(new java.awt.Color(0, 153, 0));
         adjectiveQPluralPanel.setPreferredSize(new java.awt.Dimension(413, 114));
 
+        adjectiveQPluralTitle.setEditable(false);
         adjectiveQPluralTitle.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveQPluralTitle.setColumns(20);
         adjectiveQPluralTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         adjectiveQPluralTitle.setRows(5);
         adjectiveQPluralTitle.setText("Quenya\nPlural");
+        adjectiveQPluralTitle.setBorder(null);
 
         adjectiveQPluralBox.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveQPluralBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -2717,55 +2727,70 @@ public class Instructor extends javax.swing.JFrame
 
         addAdjective.addTab(" Adjective ", adjectiveAddAdjective);
 
-        jList2.setBackground(new java.awt.Color(240, 190, 0));
-        jList2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jList2.setForeground(new java.awt.Color(0, 153, 0));
-        jList2.setModel(new javax.swing.AbstractListModel()
+        adjectiveNouns.setBackground(new java.awt.Color(240, 190, 0));
+        adjectiveNouns.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        adjectiveNouns.setForeground(new java.awt.Color(0, 153, 0));
+        adjectiveNouns.setModel(new javax.swing.AbstractListModel()
         {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList2);
+        adjectiveNounScroll.setViewportView(adjectiveNouns);
 
-        javax.swing.GroupLayout adjectiveNounsLayout = new javax.swing.GroupLayout(adjectiveNouns);
-        adjectiveNouns.setLayout(adjectiveNounsLayout);
-        adjectiveNounsLayout.setHorizontalGroup(
-            adjectiveNounsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        javax.swing.GroupLayout adjectiveNounPanelLayout = new javax.swing.GroupLayout(adjectiveNounPanel);
+        adjectiveNounPanel.setLayout(adjectiveNounPanelLayout);
+        adjectiveNounPanelLayout.setHorizontalGroup(
+            adjectiveNounPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adjectiveNounScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
         );
-        adjectiveNounsLayout.setVerticalGroup(
-            adjectiveNounsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+        adjectiveNounPanelLayout.setVerticalGroup(
+            adjectiveNounPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adjectiveNounScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
         );
 
-        addAdjective.addTab(" Nouns ", adjectiveNouns);
+        addAdjective.addTab(" Nouns ", adjectiveNounPanel);
 
-        jList1.setBackground(new java.awt.Color(240, 190, 0));
-        jList1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jList1.setForeground(new java.awt.Color(0, 153, 0));
-        jList1.setModel(new javax.swing.AbstractListModel()
+        adverbVerbs.setBackground(new java.awt.Color(240, 190, 0));
+        adverbVerbs.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        adverbVerbs.setForeground(new java.awt.Color(0, 153, 0));
+        adverbVerbs.setModel(new javax.swing.AbstractListModel()
         {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        adverbVerbScroll.setViewportView(adverbVerbs);
 
-        javax.swing.GroupLayout adverbVerbsLayout = new javax.swing.GroupLayout(adverbVerbs);
-        adverbVerbs.setLayout(adverbVerbsLayout);
-        adverbVerbsLayout.setHorizontalGroup(
-            adverbVerbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        javax.swing.GroupLayout adverbVerbPanelLayout = new javax.swing.GroupLayout(adverbVerbPanel);
+        adverbVerbPanel.setLayout(adverbVerbPanelLayout);
+        adverbVerbPanelLayout.setHorizontalGroup(
+            adverbVerbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adverbVerbScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
         );
-        adverbVerbsLayout.setVerticalGroup(
-            adverbVerbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+        adverbVerbPanelLayout.setVerticalGroup(
+            adverbVerbPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adverbVerbScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
         );
 
-        addAdjective.addTab(" Verbs ", adverbVerbs);
+        addAdjective.addTab(" Verbs ", adverbVerbPanel);
 
         addingGrounds.add(addAdjective, "Adjective");
+
+        blankPanel.setBackground(new java.awt.Color(0, 153, 0));
+
+        javax.swing.GroupLayout blankPanelLayout = new javax.swing.GroupLayout(blankPanel);
+        blankPanel.setLayout(blankPanelLayout);
+        blankPanelLayout.setHorizontalGroup(
+            blankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 856, Short.MAX_VALUE)
+        );
+        blankPanelLayout.setVerticalGroup(
+            blankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 434, Short.MAX_VALUE)
+        );
+
+        addingGrounds.add(blankPanel, "blank");
 
         addWord.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         addWord.setText("Add Word");
@@ -2891,60 +2916,60 @@ public class Instructor extends javax.swing.JFrame
 
     private void setupPractice()
     {
-        switch (section)
-        {
-            case "A1":
-                promptAndAnswer = Practice.words();
-                break;
-            case "A2":
-                promptAndAnswer = Practice.phrases(1, false);
-                break;
-            case "A3":
-                promptAndAnswer = AdjectivePractice.adjectives();
-                break;
-            case "A4":
-                promptAndAnswer = VerbPractice.verbs(1);
-                break;
-            case "B1":
-                promptAndAnswer = Practice.phrases((int) (Math.random() * 4) + 2, Practice.randomBoolean());
-                break;
-            case "B2":
-                promptAndAnswer = VerbPractice.verbs(2);
-                break;
-            case "B3":
-                promptAndAnswer = VerbPractice.verbs(3);
-                break;
-            case "B4":
-                promptAndAnswer = VerbPractice.verbs(4);
-                break;
-            case "B5":
-                promptAndAnswer = VerbPractice.verbs(5);
-                break;
-            case "B6":
-                promptAndAnswer = VerbPractice.verbs(6);
-                break;
-            case "B7":
-                promptAndAnswer = VerbPractice.negativeVerbs((int) (Math.random() * 4) + 1);
-                break;
-            case "B8":
-                promptAndAnswer = VerbPractice.verbs(7);
-                break;
-            default:
-                promptAndAnswer = new String[]
-                {
-                    "Put a break at " + section, "Okay"
-                };
-                break;
-        }
-        incorrect.setText("");
-        input.setText("");
-        givenText.setText(promptAndAnswer[0]);
-
-        StyledDocument doc = givenText.getStyledDocument();
-
-        SimpleAttributeSet style = new SimpleAttributeSet();
-        StyleConstants.setAlignment(style, StyleConstants.ALIGN_CENTER);
-        doc.setParagraphAttributes(0, doc.getLength(), style, false);
+//        switch (section)
+//        {
+//            case "A1":
+//                promptAndAnswer = Practice.words();
+//                break;
+//            case "A2":
+//                promptAndAnswer = Practice.phrases(1, false);
+//                break;
+//            case "A3":
+//                promptAndAnswer = AdjectivePractice.adjectives();
+//                break;
+//            case "A4":
+//                promptAndAnswer = VerbPractice.verbs(1);
+//                break;
+//            case "B1":
+//                promptAndAnswer = Practice.phrases((int) (Math.random() * 4) + 2, Practice.randomBoolean());
+//                break;
+//            case "B2":
+//                promptAndAnswer = VerbPractice.verbs(2);
+//                break;
+//            case "B3":
+//                promptAndAnswer = VerbPractice.verbs(3);
+//                break;
+//            case "B4":
+//                promptAndAnswer = VerbPractice.verbs(4);
+//                break;
+//            case "B5":
+//                promptAndAnswer = VerbPractice.verbs(5);
+//                break;
+//            case "B6":
+//                promptAndAnswer = VerbPractice.verbs(6);
+//                break;
+//            case "B7":
+//                promptAndAnswer = VerbPractice.negativeVerbs((int) (Math.random() * 4) + 1);
+//                break;
+//            case "B8":
+//                promptAndAnswer = VerbPractice.verbs(7);
+//                break;
+//            default:
+//                promptAndAnswer = new String[]
+//                {
+//                    "Put a break at " + section, "Okay"
+//                };
+//                break;
+//        }
+//        incorrect.setText("");
+//        input.setText("");
+//        givenText.setText(promptAndAnswer[0]);
+//
+//        StyledDocument doc = givenText.getStyledDocument();
+//
+//        SimpleAttributeSet style = new SimpleAttributeSet();
+//        StyleConstants.setAlignment(style, StyleConstants.ALIGN_CENTER);
+//        doc.setParagraphAttributes(0, doc.getLength(), style, false);
     }
 
     private void aBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aBackActionPerformed
@@ -3140,7 +3165,14 @@ public class Instructor extends javax.swing.JFrame
 
     private void resetAdjective()
     {
-
+        resetText( adjectiveESingBox ); resetText( adjectiveEAdverbBox );
+        resetText( adjectiveQSingBox ); resetText( adjectiveQPluralBox );
+        resetText( adjectiveQAdverbBox );
+        
+        adjectiveNouns.clearSelection();
+        adverbVerbs.clearSelection();
+        
+        addAdjective.setSelectedComponent( adjectiveAddAdjective );
     }
     private void resetNoun()
     {
@@ -3152,7 +3184,7 @@ public class Instructor extends javax.swing.JFrame
         nounActions.clearSelection();
         nounAdjectives.clearSelection();
         
-        
+        addNoun.setSelectedComponent( nounAddNoun );
     }
 
     private void resetVerb()
@@ -3217,6 +3249,8 @@ public class Instructor extends javax.swing.JFrame
         
         verbObjects.setModel( nounModel );
         verbSubjects.setModel( nounModel );
+        
+        adjectiveNouns.setModel( nounModel );
     }
 
     private void updatePrepositionModels()
@@ -3234,6 +3268,8 @@ public class Instructor extends javax.swing.JFrame
         
         nounObjected.setModel( verbModel );
         nounActions.setModel( verbModel );
+        
+        adverbVerbs.setModel( verbModel );
     }
 
     /**
@@ -3324,7 +3360,9 @@ public class Instructor extends javax.swing.JFrame
     public javax.swing.JTextField adjectiveESingBox;
     private javax.swing.JPanel adjectiveESingPanel;
     private javax.swing.JTextArea adjectiveESingTitle;
-    private javax.swing.JPanel adjectiveNouns;
+    private javax.swing.JPanel adjectiveNounPanel;
+    private javax.swing.JScrollPane adjectiveNounScroll;
+    public javax.swing.JList adjectiveNouns;
     public javax.swing.JTextField adjectiveQAdverbBox;
     private javax.swing.JPanel adjectiveQAdverbPanel;
     private javax.swing.JTextArea adjectiveQAdverbTitle;
@@ -3334,7 +3372,9 @@ public class Instructor extends javax.swing.JFrame
     public javax.swing.JTextField adjectiveQSingBox;
     private javax.swing.JPanel adjectiveQSingPanel;
     private javax.swing.JTextArea adjectiveQSingTitle;
-    private javax.swing.JPanel adverbVerbs;
+    private javax.swing.JPanel adverbVerbPanel;
+    private javax.swing.JScrollPane adverbVerbScroll;
+    public javax.swing.JList adverbVerbs;
     private javax.swing.JButton bActiveParticiples;
     private javax.swing.JButton bAoristVerbs;
     private javax.swing.JButton bBack;
@@ -3351,6 +3391,7 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JTextArea bText;
     private javax.swing.JScrollPane bTitleScroll;
     private javax.swing.JButton begin;
+    private javax.swing.JPanel blankPanel;
     private javax.swing.JPanel cPanel;
     private javax.swing.JScrollPane cScroll;
     private javax.swing.JTextArea cText;
@@ -3388,22 +3429,6 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JTextArea incorrect;
     private javax.swing.JScrollPane incorrectScroll;
     private javax.swing.JTextField input;
-    public javax.swing.JList jList1;
-    public javax.swing.JList jList2;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JPanel nounActionPanel;
     private javax.swing.JScrollPane nounActionScroll;
     public javax.swing.JList nounActions;

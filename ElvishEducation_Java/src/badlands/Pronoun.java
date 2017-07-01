@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package badlands;
+/**package badlands;
 
 import basics.Word;
-
+*/
 /**
  *
  * @author Michael
  */
-public class Pronoun extends Word
+/**public class Pronoun extends Word
 {
     private final String asObject;
     
@@ -26,3 +26,4 @@ public class Pronoun extends Word
         return asObject;
     }
 }
+*/

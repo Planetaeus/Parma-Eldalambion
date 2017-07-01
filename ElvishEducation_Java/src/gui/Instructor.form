@@ -4481,6 +4481,7 @@
                           <SubComponents>
                             <Component class="javax.swing.JTextArea" name="adjectiveQSingTitle">
                               <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="be" red="f0" type="rgb"/>
                                 </Property>
@@ -4490,6 +4491,9 @@
                                 </Property>
                                 <Property name="rows" type="int" value="5"/>
                                 <Property name="text" type="java.lang.String" value="Quenya&#xa;Singular"/>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="adjectiveQSingBox">
@@ -4557,6 +4561,7 @@
                           <SubComponents>
                             <Component class="javax.swing.JTextArea" name="adjectiveESingTitle">
                               <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="be" red="f0" type="rgb"/>
                                 </Property>
@@ -4566,6 +4571,9 @@
                                 </Property>
                                 <Property name="rows" type="int" value="5"/>
                                 <Property name="text" type="java.lang.String" value="English&#xa;Singular"/>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="adjectiveESingBox">
@@ -4633,6 +4641,7 @@
                           <SubComponents>
                             <Component class="javax.swing.JTextArea" name="adjectiveEAdverbTitle">
                               <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="be" red="f0" type="rgb"/>
                                 </Property>
@@ -4642,6 +4651,9 @@
                                 </Property>
                                 <Property name="rows" type="int" value="5"/>
                                 <Property name="text" type="java.lang.String" value="English&#xa;Adverb"/>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="adjectiveEAdverbBox">
@@ -4709,6 +4721,7 @@
                           <SubComponents>
                             <Component class="javax.swing.JTextArea" name="adjectiveQAdverbTitle">
                               <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="be" red="f0" type="rgb"/>
                                 </Property>
@@ -4718,6 +4731,9 @@
                                 </Property>
                                 <Property name="rows" type="int" value="5"/>
                                 <Property name="text" type="java.lang.String" value="Quenya&#xa;Adverb"/>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="adjectiveQAdverbBox">
@@ -4785,6 +4801,7 @@
                           <SubComponents>
                             <Component class="javax.swing.JTextArea" name="adjectiveQPluralTitle">
                               <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="be" red="f0" type="rgb"/>
                                 </Property>
@@ -4794,6 +4811,9 @@
                                 </Property>
                                 <Property name="rows" type="int" value="5"/>
                                 <Property name="text" type="java.lang.String" value="Quenya&#xa;Plural"/>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="adjectiveQPluralBox">
@@ -4822,7 +4842,7 @@
                         </Container>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JPanel" name="adjectiveNouns">
+                    <Container class="javax.swing.JPanel" name="adjectiveNounPanel">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName=" Nouns ">
@@ -4834,21 +4854,21 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane2" alignment="0" pref="851" max="32767" attributes="0"/>
+                              <Component id="adjectiveNounScroll" alignment="0" pref="851" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane2" alignment="0" pref="376" max="32767" attributes="0"/>
+                              <Component id="adjectiveNounScroll" alignment="0" pref="376" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                        <Container class="javax.swing.JScrollPane" name="adjectiveNounScroll">
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JList" name="jList2">
+                            <Component class="javax.swing.JList" name="adjectiveNouns">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="be" red="f0" type="rgb"/>
@@ -4877,7 +4897,7 @@
                         </Container>
                       </SubComponents>
                     </Container>
-                    <Container class="javax.swing.JPanel" name="adverbVerbs">
+                    <Container class="javax.swing.JPanel" name="adverbVerbPanel">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName=" Verbs ">
@@ -4889,21 +4909,21 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" alignment="0" pref="851" max="32767" attributes="0"/>
+                              <Component id="adverbVerbScroll" alignment="0" pref="851" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" alignment="0" pref="376" max="32767" attributes="0"/>
+                              <Component id="adverbVerbScroll" alignment="0" pref="376" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                        <Container class="javax.swing.JScrollPane" name="adverbVerbScroll">
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JList" name="jList1">
+                            <Component class="javax.swing.JList" name="adverbVerbs">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="be" red="f0" type="rgb"/>
@@ -4933,6 +4953,31 @@
                       </SubComponents>
                     </Container>
                   </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="blankPanel">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="99" red="0" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="blank"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="0" pref="856" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="0" pref="434" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
                 </Container>
               </SubComponents>
             </Container>

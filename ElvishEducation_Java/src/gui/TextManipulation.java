@@ -28,7 +28,28 @@ public class TextManipulation
      */
     public static void addAdjective( Instructor qi )
     {
+        String eSing = qi.adjectiveESingBox.getText(), eAdverb = qi.adjectiveEAdverbBox.getText(),
+               qSing = qi.adjectiveQSingBox.getText(), qPlural = qi.adjectiveQPluralBox.getText(),
+               qAdverb = qi.adjectiveQAdverbBox.getText();
         
+        String [] components = { eSing, eAdverb };
+        
+        SQLAmbassador.addWord( Index.E_ADJECTIVES_TABLE, Index.E_ADJECTIVES_COLUMNS, components );
+        
+        components = new String [] { qSing, qPlural, qAdverb };
+        
+        SQLAmbassador.addWord( Index.Q_ADJECTIVES_TABLE, Index.Q_ADJECTIVES_COLUMNS, components );
+        
+        int index = SQLAmbassador.findIndex( Index.E_ADJECTIVES_TABLE, "singular", eSing );
+        int [] associates;
+        
+        //Nouns
+        associates = qi.adjectiveNouns.getSelectedIndices();
+        addAssociate( "Descriptor", associates, index );
+        
+        //Verbs
+        associates = qi.adverbVerbs.getSelectedIndices();
+        addAssociate( "Adverb", associates, index );
     }
     
     /**
@@ -175,7 +196,7 @@ public class TextManipulation
         
         return model;
     }
-    
+    //For when the item described by index comes first in the association
     public static void addAssociate( String type, int index, int [] associates )
     {
         switch( type )
@@ -201,6 +222,7 @@ public class TextManipulation
         }
     }
     
+    //For when the item described by index comes second in the association
     public static void addAssociate( String type, int [] associates, int index )
     {
         switch( type )
