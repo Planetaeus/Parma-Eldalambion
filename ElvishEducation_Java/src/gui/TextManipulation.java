@@ -153,9 +153,14 @@ public class TextManipulation
         String eInfinitive = qi.eInfinitiveBox.getText(), ePast = qi.ePastBox.getText(),
                ePerfect = qi.ePerfectBox.getText(), eAorist = qi.eAoristBox.getText(),
                eAorist3 = qi.eAoristAltBox.getText(), eActive = qi.eActiveBox.getText(),
-               ePassive = qi.ePassiveBox.getText();
+               ePassive = qi.ePassiveBox.getText(), transitive;
+         
+        if( qi.transitive.isSelected() )
+            transitive = "1";
+        else
+            transitive = "0";
         
-        String [] components = { eInfinitive, ePast, ePerfect, eAorist, eAorist3, eActive, ePassive };
+        String [] components = { eInfinitive, ePast, ePerfect, eAorist, eAorist3, eActive, ePassive, transitive };
         
         for( String c: components )
         {
@@ -172,7 +177,7 @@ public class TextManipulation
                qInfinitive = qi.qInfinitiveBox.getText(), qActive = qi.qActiveBox.getText(),
                qPassive = qi.qPassiveBox.getText(), qVerbal = qi.qVerbalBox.getText();
         
-        components = new String [] { qStem, qPast, qFuture, qPerfect, qPresent, qAorist, qInfinitive, qActive, qPassive, qVerbal };
+        components = new String [] { qStem, qPast, qFuture, qPerfect, qPresent, qAorist, qInfinitive, qActive, qPassive, qVerbal, transitive };
         
         for( String c: components )
         {

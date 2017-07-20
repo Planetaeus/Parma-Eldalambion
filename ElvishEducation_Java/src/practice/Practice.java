@@ -9,6 +9,7 @@ package practice;
 import basics.verbs.Verb;
 import gui.TextManipulation;
 import gui.Index;
+import sql.SQLAmbassador;
 import vocab.*;
 public class Practice
 {
@@ -20,14 +21,7 @@ public class Practice
     public static boolean randomBoolean()
     {
         double i = Math.random() * 2;
-        if( i < 1 )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return i < 1;
     }
     
     public static String getLang( boolean l )
@@ -42,6 +36,11 @@ public class Practice
         }
     }
     
+    public static boolean startsWithVowel( String word )
+    {
+        return ( word.substring(0, 1).equals("a") || word.substring(0, 1).equals("e") || word.substring(0, 1).equals("i") || word.substring(0, 1).equals("o") || word.substring(0, 1).equals("u") );
+    }
+    
     public static String [] articles( VocabNoun n, boolean sing, boolean definite )
     {
         String e = n.toString( sing )[ 1 ], q = n.toString( sing )[ 0 ];
@@ -51,7 +50,7 @@ public class Practice
             e = "the " + e;
             q = "i " + q;
         }
-        else if( sing && ( e.substring(0, 1).equals("a") || e.substring(0, 1).equals("e") || e.substring(0, 1).equals("i") || e.substring(0, 1).equals("o") || e.substring(0, 1).equals("u") ) )
+        else if( sing && startsWithVowel( e ) )
         {
             e = "an " + e;
         }

@@ -630,7 +630,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="toG" pref="185" max="32767" attributes="0"/>
+                                  <Component id="toG" pref="181" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1458,7 +1458,7 @@
                                           <Component id="prepPluralBox" alignment="1" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="prepPluralTitle" min="-2" pref="378" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -1470,7 +1470,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="prepPluralTitle" min="-2" pref="68" max="-2" attributes="0"/>
-                                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                                      <EmptySpace pref="9" max="32767" attributes="0"/>
                                       <Component id="prepPluralBox" min="-2" pref="62" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -1524,7 +1524,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="prepDualTitle" min="-2" pref="68" max="-2" attributes="0"/>
-                                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                                      <EmptySpace pref="9" max="32767" attributes="0"/>
                                       <Component id="prepDualBox" min="-2" pref="62" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -1672,7 +1672,7 @@
                                           <Component id="prepEnglishBox" alignment="1" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="prepEnglishTitle" min="-2" pref="378" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -1684,7 +1684,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="prepEnglishTitle" min="-2" pref="68" max="-2" attributes="0"/>
-                                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                                      <EmptySpace pref="9" max="32767" attributes="0"/>
                                       <Component id="prepEnglishBox" min="-2" pref="62" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -1910,7 +1910,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="eInfinitiveTitle" pref="63" max="32767" attributes="0"/>
+                                          <Component id="eInfinitiveTitle" pref="61" max="32767" attributes="0"/>
                                           <Component id="eInfinitiveBox" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -2064,7 +2064,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="ePerfectTitle" pref="217" max="32767" attributes="0"/>
+                                      <Component id="ePerfectTitle" pref="212" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="ePerfectBox" min="-2" pref="180" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -2076,7 +2076,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="ePerfectTitle" pref="63" max="32767" attributes="0"/>
+                                          <Component id="ePerfectTitle" pref="61" max="32767" attributes="0"/>
                                           <Component id="ePerfectBox" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -2148,7 +2148,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="eAoristTitle" min="-2" pref="177" max="-2" attributes="0"/>
-                                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                                      <EmptySpace pref="42" max="32767" attributes="0"/>
                                       <Component id="eAoristBox" min="-2" pref="180" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -2159,7 +2159,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="eAoristTitle" pref="63" max="32767" attributes="0"/>
+                                          <Component id="eAoristTitle" pref="61" max="32767" attributes="0"/>
                                           <Component id="eAoristBox" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -2243,7 +2243,7 @@
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="eAoristAltBox" max="32767" attributes="0"/>
-                                          <Component id="eAoristAltTitle" pref="63" max="32767" attributes="0"/>
+                                          <Component id="eAoristAltTitle" pref="61" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -2408,7 +2408,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="ePassiveTitle" pref="63" max="32767" attributes="0"/>
+                                          <Component id="ePassiveTitle" pref="61" max="32767" attributes="0"/>
                                           <Component id="ePassiveBox" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -2572,7 +2572,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="qVerbalPanel" alignment="1" pref="465" max="32767" attributes="0"/>
+                                      <Component id="qVerbalPanel" alignment="1" pref="460" max="32767" attributes="0"/>
                                       <Component id="qInfinitivePanel" alignment="0" max="32767" attributes="0"/>
                                       <Component id="qActivePanel" alignment="1" max="32767" attributes="0"/>
                                       <Component id="qPassivePanel" alignment="1" max="32767" attributes="0"/>
@@ -2586,7 +2586,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="qStemPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="qAoristPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="qAoristPanel" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -3029,9 +3029,11 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="qAoristTitle" min="-2" pref="177" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="qAoristTitle" min="-2" pref="77" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="qAoristBox" min="-2" pref="180" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="transitive" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3040,11 +3042,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="qAoristBox" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="qAoristTitle" alignment="0" pref="51" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="transitive" alignment="1" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="qAoristTitle" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                                              <Component id="qAoristBox" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -3090,6 +3095,26 @@
                                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                               </AuxValues>
                             </Component>
+                            <Component class="javax.swing.JCheckBox" name="transitive">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="be" red="f0" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Tahoma" size="24" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Transitive"/>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="null"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="transitiveActionPerformed"/>
+                              </Events>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                              </AuxValues>
+                            </Component>
                           </SubComponents>
                         </Container>
                         <Container class="javax.swing.JPanel" name="qInfinitivePanel">
@@ -3110,7 +3135,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="qInfinitiveTitle" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                                      <EmptySpace pref="45" max="32767" attributes="0"/>
                                       <Component id="qInfinitiveBox" min="-2" pref="180" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -3695,9 +3720,9 @@
                                   <Component id="nounSeparator" min="-2" pref="3" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="nounQSingPanel" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="nounQSingPanel" alignment="1" pref="402" max="32767" attributes="0"/>
                                       <Component id="nounEPluralPanel" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="nounQPluralPanel" alignment="1" pref="408" max="32767" attributes="0"/>
+                                      <Component id="nounQPluralPanel" alignment="1" pref="402" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -4460,7 +4485,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="adjectiveQSingTitle" min="-2" pref="200" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="adjectiveQSingBox" pref="186" max="32767" attributes="0"/>
+                                      <Component id="adjectiveQSingBox" pref="181" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -4620,7 +4645,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="adjectiveEAdverbTitle" min="-2" pref="200" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="adjectiveEAdverbBox" pref="186" max="32767" attributes="0"/>
+                                      <Component id="adjectiveEAdverbBox" pref="181" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -4780,7 +4805,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="adjectiveQPluralTitle" min="-2" pref="200" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="adjectiveQPluralBox" pref="187" max="32767" attributes="0"/>
+                                      <Component id="adjectiveQPluralBox" pref="182" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>

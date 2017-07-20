@@ -79,11 +79,15 @@ public class SQLAmbassador
         addWord( table, columns, components );
     }
     
-    public static Word getRandomWord( String table, String column )
+    public static Word getRandomWord( String eTable, String eColumn, String qTable, String qColumn )
     {
         Word word = null;
         
-        String query = "SELECT TOP 1 " + column + " FROM " + table + "ORDER BY NEWID()";
+        String query = "SELECT TOP 1 " + eTable + "." + eColumn + " AS 'English', "
+                        + qTable + "." + qColumn + " AS 'Quenya'"
+                        + " FROM " + eTable + " JOIN " + qTable
+                        + " ON " + eTable + ".id = " + qTable + ".id "
+                        + "ORDER BY NEWID()";
         
         Process block = (ResultSet rs) ->
         {
@@ -91,8 +95,9 @@ public class SQLAmbassador
             while( rs.next() )
             {
                 int index = rs.getInt( "id" );
-                String string = rs.getString(column);
-                returnable = new Word( string, index );
+                String e = rs.getString( "English" );
+                String q = rs.getString( "Quenya" );
+                returnable = new Word( e, q, index );
             }
             
             return returnable;
@@ -144,7 +149,7 @@ public class SQLAmbassador
         
         word = (String)query( query, block );
         
-        return new Word( word, id );
+        return new Word( word, word, id );
     }
     
     public static int findIndex( String table, String column, String word )

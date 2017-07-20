@@ -14,22 +14,22 @@ public class Index
 {
     //Addresses of the vocabulary text files
     public static final String E_ADJECTIVES_TABLE = "English_Adjectives";
-    public static final String E_ADJECTIVES_COLUMNS = "singular, adverb";
+    public static final String E_ADJECTIVES_COLUMNS = "singular, adverb, superlative";
     
     public static final String E_NOUNS_TABLE = "English_Nouns";
     public static final String E_NOUNS_COLUMNS = "singular, plural";
     
     public static final String E_VERBS_TABLE = "English_Verbs";
-    public static final String E_VERBS_COLUMNS = "infinitive, past, perfect, aorist, aorist_third, active_participle, passive_participle";
+    public static final String E_VERBS_COLUMNS = "infinitive, past, perfect, aorist, aorist_third, active_participle, passive_participle, transitive";
     
     public static final String Q_ADJECTIVES_TABLE = "Quenya_Adjectives";
-    public static final String Q_ADJECTIVES_COLUMNS = "singular, plural, adverb";
+    public static final String Q_ADJECTIVES_COLUMNS = "singular, plural, adverb, superlative, plural_superlative";
     
     public static final String Q_NOUNS_TABLE = "Quenya_Nouns";
     public static final String Q_NOUNS_COLUMNS = "stem, singular, dual, plural";
     
     public static final String Q_VERBS_TABLE = "Quenya_Verbs";
-    public static final String Q_VERBS_COLUMNS = "stem, present_tense, past_tense, future_tense, aorist, perfect, infinitive, active_participle, passive_participle, gerund";
+    public static final String Q_VERBS_COLUMNS = "stem, present_tense, past_tense, future_tense, aorist, perfect, infinitive, active_participle, passive_participle, gerund, transitive";
     
     public static final String ADVERBS_TABLE = "Action_Adverbs";
     public static final String ADVERBS_COLUMNS = "action_id, adverb_id";

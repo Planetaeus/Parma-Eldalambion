@@ -40,8 +40,7 @@ public class Instructor extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         yggdrasil = new javax.swing.JPanel();
         welcome = new javax.swing.JPanel();
@@ -102,36 +101,27 @@ public class Instructor extends javax.swing.JFrame
         addVocab = new javax.swing.JPanel();
         addingGrounds = new javax.swing.JPanel();
         addPreposition = new javax.swing.JTabbedPane();
-        try
-        {
+        try {
             prepAddPrep =(javax.swing.JPanel)java.beans.Beans.instantiate(getClass().getClassLoader(), "gui.Instructor_prepAddPrep");
-        } catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (java.io.IOException e)
-        {
+        } catch (java.io.IOException e) {
             e.printStackTrace();
         }
         prepSeparator = new javax.swing.JSeparator();
         prepPluralPanel = new javax.swing.JPanel();
-        try
-        {
+        try {
             prepPluralTitle =(javax.swing.JTextArea)java.beans.Beans.instantiate(getClass().getClassLoader(), "gui.Instructor_prepPluralTitle");
-        } catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (java.io.IOException e)
-        {
+        } catch (java.io.IOException e) {
             e.printStackTrace();
         }
-        try
-        {
+        try {
             prepPluralBox =(javax.swing.JTextField)java.beans.Beans.instantiate(getClass().getClassLoader(), "gui.Instructor_prepPluralBox");
-        } catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (java.io.IOException e)
-        {
+        } catch (java.io.IOException e) {
             e.printStackTrace();
         }
         prepDualPanel = new javax.swing.JPanel();
@@ -191,6 +181,7 @@ public class Instructor extends javax.swing.JFrame
         qAoristPanel = new javax.swing.JPanel();
         qAoristTitle = new javax.swing.JTextField();
         qAoristBox = new javax.swing.JTextField();
+        transitive = new javax.swing.JCheckBox();
         qInfinitivePanel = new javax.swing.JPanel();
         qInfinitiveTitle = new javax.swing.JTextField();
         qInfinitiveBox = new javax.swing.JTextField();
@@ -307,10 +298,8 @@ public class Instructor extends javax.swing.JFrame
         begin.setMaximumSize(new java.awt.Dimension(500, 100));
         begin.setMinimumSize(new java.awt.Dimension(500, 100));
         begin.setPreferredSize(new java.awt.Dimension(500, 100));
-        begin.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        begin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 beginActionPerformed(evt);
             }
         });
@@ -376,10 +365,8 @@ public class Instructor extends javax.swing.JFrame
         toA.setMaximumSize(new java.awt.Dimension(200, 262));
         toA.setMinimumSize(new java.awt.Dimension(200, 262));
         toA.setPreferredSize(new java.awt.Dimension(200, 262));
-        toA.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        toA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toAActionPerformed(evt);
             }
         });
@@ -423,10 +410,8 @@ public class Instructor extends javax.swing.JFrame
         toB.setBackground(yggdrasil.getBackground());
         toB.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         toB.setText("Go");
-        toB.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        toB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toBActionPerformed(evt);
             }
         });
@@ -536,10 +521,8 @@ public class Instructor extends javax.swing.JFrame
         toG.setBackground(yggdrasil.getBackground());
         toG.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         toG.setText("General Practice");
-        toG.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        toG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toGActionPerformed(evt);
             }
         });
@@ -557,26 +540,22 @@ public class Instructor extends javax.swing.JFrame
             gPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(toG, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                .addComponent(toG, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         selectionBack.setText("Back");
         selectionBack.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         selectionBack.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        selectionBack.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        selectionBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectionBackActionPerformed(evt);
             }
         });
 
         addVocabButton.setText("Add Vocabulary");
-        addVocabButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        addVocabButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addVocabButtonActionPerformed(evt);
             }
         });
@@ -658,10 +637,8 @@ public class Instructor extends javax.swing.JFrame
         toAWords.setBackground(yggdrasil.getBackground());
         toAWords.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         toAWords.setText("Translating Single Words");
-        toAWords.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        toAWords.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toAWordsActionPerformed(evt);
             }
         });
@@ -669,10 +646,8 @@ public class Instructor extends javax.swing.JFrame
         toAPhrases.setBackground(yggdrasil.getBackground());
         toAPhrases.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         toAPhrases.setText("Translating Phrases");
-        toAPhrases.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        toAPhrases.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toAPhrasesActionPerformed(evt);
             }
         });
@@ -680,10 +655,8 @@ public class Instructor extends javax.swing.JFrame
         aAdjectives.setBackground(yggdrasil.getBackground());
         aAdjectives.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         aAdjectives.setText("Adjective Practice");
-        aAdjectives.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        aAdjectives.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aAdjectivesActionPerformed(evt);
             }
         });
@@ -691,19 +664,15 @@ public class Instructor extends javax.swing.JFrame
         aVerbs.setBackground(yggdrasil.getBackground());
         aVerbs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         aVerbs.setText("Present Tense Verbs");
-        aVerbs.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        aVerbs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aVerbsActionPerformed(evt);
             }
         });
 
         aBack.setText("Back");
-        aBack.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        aBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aBackActionPerformed(evt);
             }
         });
@@ -768,10 +737,8 @@ public class Instructor extends javax.swing.JFrame
         bTitleScroll.setViewportView(sectionBHeading);
 
         bBack.setText("Back");
-        bBack.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bBackActionPerformed(evt);
             }
         });
@@ -786,80 +753,64 @@ public class Instructor extends javax.swing.JFrame
 
         bPastVerbs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bPastVerbs.setText("Past Tense Verbs");
-        bPastVerbs.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bPastVerbs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bPastVerbsActionPerformed(evt);
             }
         });
 
         bPhrases.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bPhrases.setText("Translating Phrases");
-        bPhrases.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bPhrases.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bPhrasesActionPerformed(evt);
             }
         });
 
         bFutureVerbs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bFutureVerbs.setText("Future Tense Verbs");
-        bFutureVerbs.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bFutureVerbs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bFutureVerbsActionPerformed(evt);
             }
         });
 
         bAoristVerbs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bAoristVerbs.setText("Aorist Verbs");
-        bAoristVerbs.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bAoristVerbs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bAoristVerbsActionPerformed(evt);
             }
         });
 
         bPerfectVerbs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bPerfectVerbs.setText("Perfect Tense Verbs");
-        bPerfectVerbs.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bPerfectVerbs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bPerfectVerbsActionPerformed(evt);
             }
         });
 
         bInfinitives.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bInfinitives.setText("Infinitives");
-        bInfinitives.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bInfinitives.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bInfinitivesActionPerformed(evt);
             }
         });
 
         bNegatives.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bNegatives.setText("Negatives");
-        bNegatives.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bNegatives.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bNegativesActionPerformed(evt);
             }
         });
 
         bActiveParticiples.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bActiveParticiples.setText("Active Participles");
-        bActiveParticiples.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        bActiveParticiples.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bActiveParticiplesActionPerformed(evt);
             }
         });
@@ -956,10 +907,8 @@ public class Instructor extends javax.swing.JFrame
         input.setMargin(new java.awt.Insets(2, 5, 2, 5));
 
         practiceBack.setText("Back");
-        practiceBack.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        practiceBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 practiceBackActionPerformed(evt);
             }
         });
@@ -967,10 +916,8 @@ public class Instructor extends javax.swing.JFrame
         practiceCheck.setBackground(new java.awt.Color(240, 190, 0));
         practiceCheck.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         practiceCheck.setText("Check");
-        practiceCheck.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        practiceCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 practiceCheckActionPerformed(evt);
             }
         });
@@ -1059,7 +1006,7 @@ public class Instructor extends javax.swing.JFrame
                     .addComponent(prepPluralBox, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(prepPluralPanelLayout.createSequentialGroup()
                         .addComponent(prepPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 12, Short.MAX_VALUE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         prepPluralPanelLayout.setVerticalGroup(
@@ -1067,7 +1014,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prepPluralPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(prepPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(prepPluralBox, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1107,7 +1054,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prepDualPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(prepDualTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(prepDualBox, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1179,7 +1126,7 @@ public class Instructor extends javax.swing.JFrame
                     .addComponent(prepEnglishBox, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(prepEnglishPanelLayout.createSequentialGroup()
                         .addComponent(prepEnglishTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 12, Short.MAX_VALUE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         prepEnglishPanelLayout.setVerticalGroup(
@@ -1187,7 +1134,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prepEnglishPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(prepEnglishTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(prepEnglishBox, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1234,8 +1181,7 @@ public class Instructor extends javax.swing.JFrame
         prepVerbs.setBackground(new java.awt.Color(240, 190, 0));
         prepVerbs.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         prepVerbs.setForeground(new java.awt.Color(0, 153, 0));
-        prepVerbs.setModel(new javax.swing.AbstractListModel()
-        {
+        prepVerbs.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -1295,7 +1241,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(eInfinitivePanelLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
                 .addGroup(eInfinitivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eInfinitiveTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                    .addComponent(eInfinitiveTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(eInfinitiveBox))
                 .addContainerGap())
         );
@@ -1361,7 +1307,7 @@ public class Instructor extends javax.swing.JFrame
             ePerfectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ePerfectPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ePerfectTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                .addComponent(ePerfectTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ePerfectBox, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1371,7 +1317,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(ePerfectPanelLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
                 .addGroup(ePerfectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ePerfectTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                    .addComponent(ePerfectTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(ePerfectBox))
                 .addContainerGap())
         );
@@ -1400,7 +1346,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(eAoristPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(eAoristTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(eAoristBox, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1409,7 +1355,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(eAoristPanelLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
                 .addGroup(eAoristPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eAoristTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                    .addComponent(eAoristTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(eAoristBox))
                 .addContainerGap())
         );
@@ -1448,7 +1394,7 @@ public class Instructor extends javax.swing.JFrame
                 .addGap(7, 7, 7)
                 .addGroup(eAoristAltPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(eAoristAltBox)
-                    .addComponent(eAoristAltTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
+                    .addComponent(eAoristAltTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1523,7 +1469,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(ePassivePanelLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
                 .addGroup(ePassivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ePassiveTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                    .addComponent(ePassiveTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(ePassiveBox))
                 .addContainerGap())
         );
@@ -1811,25 +1757,39 @@ public class Instructor extends javax.swing.JFrame
         qAoristBox.setText("Type here...");
         qAoristBox.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
+        transitive.setBackground(new java.awt.Color(240, 190, 0));
+        transitive.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        transitive.setText("Transitive");
+        transitive.setBorder(null);
+        transitive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transitiveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout qAoristPanelLayout = new javax.swing.GroupLayout(qAoristPanel);
         qAoristPanel.setLayout(qAoristPanelLayout);
         qAoristPanelLayout.setHorizontalGroup(
             qAoristPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(qAoristPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(qAoristTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(qAoristTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(qAoristBox, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(transitive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         qAoristPanelLayout.setVerticalGroup(
             qAoristPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(qAoristPanelLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
-                .addGroup(qAoristPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(qAoristBox)
-                    .addComponent(qAoristTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
-                .addGap(7, 7, 7))
+                .addGroup(qAoristPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(transitive, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(qAoristPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(qAoristTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(qAoristBox, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         qInfinitivePanel.setBackground(new java.awt.Color(240, 190, 0));
@@ -1855,7 +1815,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(qInfinitivePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(qInfinitiveTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(qInfinitiveBox, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1995,7 +1955,7 @@ public class Instructor extends javax.swing.JFrame
                     .addComponent(qPresentPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(1, 1, 1)
                 .addGroup(verbAddQuenyaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(qVerbalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                    .addComponent(qVerbalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
                     .addComponent(qInfinitivePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(qActivePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(qPassivePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2006,7 +1966,7 @@ public class Instructor extends javax.swing.JFrame
             .addGroup(verbAddQuenyaLayout.createSequentialGroup()
                 .addGroup(verbAddQuenyaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(qStemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(qAoristPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(qAoristPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addGroup(verbAddQuenyaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(qPastPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2029,8 +1989,7 @@ public class Instructor extends javax.swing.JFrame
         verbSubjects.setBackground(new java.awt.Color(240, 190, 0));
         verbSubjects.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         verbSubjects.setForeground(new java.awt.Color(0, 153, 0));
-        verbSubjects.setModel(new javax.swing.AbstractListModel()
-        {
+        verbSubjects.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2054,8 +2013,7 @@ public class Instructor extends javax.swing.JFrame
         verbObjects.setBackground(new java.awt.Color(240, 190, 0));
         verbObjects.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         verbObjects.setForeground(new java.awt.Color(0, 153, 0));
-        verbObjects.setModel(new javax.swing.AbstractListModel()
-        {
+        verbObjects.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2078,8 +2036,7 @@ public class Instructor extends javax.swing.JFrame
         verbPreposition.setBackground(new java.awt.Color(240, 190, 0));
         verbPreposition.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         verbPreposition.setForeground(new java.awt.Color(0, 153, 0));
-        verbPreposition.setModel(new javax.swing.AbstractListModel()
-        {
+        verbPreposition.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2102,8 +2059,7 @@ public class Instructor extends javax.swing.JFrame
         verbAdverbs.setBackground(new java.awt.Color(240, 190, 0));
         verbAdverbs.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         verbAdverbs.setForeground(new java.awt.Color(0, 153, 0));
-        verbAdverbs.setModel(new javax.swing.AbstractListModel()
-        {
+        verbAdverbs.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2384,9 +2340,9 @@ public class Instructor extends javax.swing.JFrame
                 .addComponent(nounSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(nounAddNounLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nounQSingPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nounQSingPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
                     .addComponent(nounEPluralPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(nounQPluralPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+                    .addComponent(nounQPluralPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE))
                 .addContainerGap())
         );
         nounAddNounLayout.setVerticalGroup(
@@ -2418,8 +2374,7 @@ public class Instructor extends javax.swing.JFrame
         nounObjected.setBackground(new java.awt.Color(240, 190, 0));
         nounObjected.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         nounObjected.setForeground(new java.awt.Color(0, 153, 0));
-        nounObjected.setModel(new javax.swing.AbstractListModel()
-        {
+        nounObjected.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2442,8 +2397,7 @@ public class Instructor extends javax.swing.JFrame
         nounActions.setBackground(new java.awt.Color(240, 190, 0));
         nounActions.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         nounActions.setForeground(new java.awt.Color(0, 153, 0));
-        nounActions.setModel(new javax.swing.AbstractListModel()
-        {
+        nounActions.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2466,8 +2420,7 @@ public class Instructor extends javax.swing.JFrame
         nounAdjectives.setBackground(new java.awt.Color(240, 190, 0));
         nounAdjectives.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         nounAdjectives.setForeground(new java.awt.Color(0, 153, 0));
-        nounAdjectives.setModel(new javax.swing.AbstractListModel()
-        {
+        nounAdjectives.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2519,7 +2472,7 @@ public class Instructor extends javax.swing.JFrame
                 .addContainerGap()
                 .addComponent(adjectiveQSingTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adjectiveQSingBox, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addComponent(adjectiveQSingBox, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
                 .addContainerGap())
         );
         adjectiveQSingPanelLayout.setVerticalGroup(
@@ -2597,7 +2550,7 @@ public class Instructor extends javax.swing.JFrame
                 .addContainerGap()
                 .addComponent(adjectiveEAdverbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adjectiveEAdverbBox, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addComponent(adjectiveEAdverbBox, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
                 .addContainerGap())
         );
         adjectiveEAdverbPanelLayout.setVerticalGroup(
@@ -2675,7 +2628,7 @@ public class Instructor extends javax.swing.JFrame
                 .addContainerGap()
                 .addComponent(adjectiveQPluralTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adjectiveQPluralBox, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                .addComponent(adjectiveQPluralBox, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
                 .addContainerGap())
         );
         adjectiveQPluralPanelLayout.setVerticalGroup(
@@ -2730,8 +2683,7 @@ public class Instructor extends javax.swing.JFrame
         adjectiveNouns.setBackground(new java.awt.Color(240, 190, 0));
         adjectiveNouns.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         adjectiveNouns.setForeground(new java.awt.Color(0, 153, 0));
-        adjectiveNouns.setModel(new javax.swing.AbstractListModel()
-        {
+        adjectiveNouns.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2754,8 +2706,7 @@ public class Instructor extends javax.swing.JFrame
         adverbVerbs.setBackground(new java.awt.Color(240, 190, 0));
         adverbVerbs.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         adverbVerbs.setForeground(new java.awt.Color(0, 153, 0));
-        adverbVerbs.setModel(new javax.swing.AbstractListModel()
-        {
+        adverbVerbs.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -2794,30 +2745,24 @@ public class Instructor extends javax.swing.JFrame
 
         addWord.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         addWord.setText("Add Word");
-        addWord.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        addWord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addWordActionPerformed(evt);
             }
         });
 
         wordType.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         wordType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "select", "Verb", "Noun", "Adjective", "Preposition" }));
-        wordType.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        wordType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wordTypeActionPerformed(evt);
             }
         });
 
         addBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addBack.setText("Back");
-        addBack.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        addBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBackActionPerformed(evt);
             }
         });
@@ -3162,6 +3107,10 @@ public class Instructor extends javax.swing.JFrame
         // TODO add your handling code here:
         showCard( "selection" );
     }//GEN-LAST:event_addBackActionPerformed
+
+    private void transitiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transitiveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transitiveActionPerformed
 
     private void resetAdjective()
     {
@@ -3523,6 +3472,7 @@ public class Instructor extends javax.swing.JFrame
     private javax.swing.JButton toC;
     private javax.swing.JButton toD;
     private javax.swing.JButton toG;
+    public javax.swing.JCheckBox transitive;
     private javax.swing.JPanel verbAddEnglish;
     private javax.swing.JPanel verbAddQuenya;
     private javax.swing.JScrollPane verbAdverbScroll;

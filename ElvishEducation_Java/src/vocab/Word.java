@@ -13,22 +13,38 @@ package vocab;
  */
 public class Word
 {
-    private String word;
-    private int index;
+    private String english, quenya;
+    private final int index;
     
-    public Word( String s, int id )
+    public Word( String e, String q, int id )
     {
-        word = s;
+        english = e;
+        quenya = q;
         index = id;
     }
     
-    public String getWord()
+    public String getEnglish()
     {
-        return word;
+        return english;
+    }
+    
+    public String getQuenya()
+    {
+        return quenya;
     }
     
     public int getIndex()
     {
         return index;
+    }
+    
+    public void setEnglish( String e )
+    {
+        english = e;
+    }
+    
+    public void setQuenya( String q )
+    {
+        quenya = q;
     }
 }
